@@ -5,7 +5,11 @@ export default function AboutSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="about" ref={ref} className="py-16 lg:py-24 px-6 bg-black">
+    <section
+      id="about"
+      ref={ref}
+      className="py-16 lg:py-24 px-6 bg-gradient-to-br from-[#F0E6FF] via-[#FFE4D6] to-[#E0F4F4]"
+    >
       <div className="max-w-[1400px] mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div
@@ -15,10 +19,10 @@ export default function AboutSection() {
                 : "opacity-0 -translate-x-12"
             }`}
           >
-            <div className="aspect-[15/16] bg-gradient-to-br from-[#00E5CC]/20 to-transparent rounded-lg overflow-hidden">
-              <div className="w-full h-full bg-[url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800')] bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700" />
+            <div className="aspect-[15/16] bg-gradient-to-br from-[#A855F7]/20 to-[#4ECDC4]/20 rounded-2xl overflow-hidden shadow-xl">
+              <div className="w-full h-full bg-[url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800')] bg-cover bg-center hover:scale-105 transition-all duration-700" />
             </div>
-            <div className="absolute inset-0 border border-[#00E5CC]/30 rounded-lg translate-x-4 translate-y-4 -z-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-700" />
+            <div className="absolute inset-0 border-2 border-[#A855F7]/30 rounded-2xl translate-x-4 translate-y-4 -z-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-700" />
           </div>
 
           <div
@@ -29,13 +33,13 @@ export default function AboutSection() {
             } [transition-delay:200ms]`}
           >
             <div>
-              <p className="text-sm font-medium tracking-widest uppercase text-[#00E5CC] mb-4">
+              <p className="text-sm font-medium tracking-widest uppercase text-[#A855F7] mb-4">
                 About Us
               </p>
-              <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+              <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight text-gray-900">
                 Building the future, one pixel at a time
               </h2>
-              <div className="space-y-4 text-lg text-white/70 leading-relaxed">
+              <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
                 <p>
                   We are a collective of designers, developers, and strategists
                   united by a passion for creating exceptional digital

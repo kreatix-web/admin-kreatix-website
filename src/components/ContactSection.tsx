@@ -57,12 +57,12 @@ export default function ContactSection() {
     <section
       id="contact"
       ref={ref}
-      className="py-16 lg:py-24 px-6 bg-black relative"
+      className="py-16 lg:py-24 px-6 bg-gradient-to-br from-[#FFF5EB] via-[#F0E6FF] to-[#E0F4F4] relative"
     >
       {/* Success Toast */}
       {showToast && (
         <div className="fixed top-6 left-0 right-0 mx-auto sm:left-auto sm:right-6 sm:mx-0 z-50 animate-fade-in-up w-[calc(100%-3rem)] sm:w-auto max-w-md px-6 sm:px-0">
-          <div className="bg-gradient-to-r from-[#00E5CC] to-[#00D4BB] text-black px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3">
+          <div className="bg-gradient-to-r from-[#4ECDC4] to-[#2AB7A8] text-white px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3">
             <CheckCircle2 size={24} className="flex-shrink-0" />
             <div>
               <p className="font-semibold">Message sent successfully!</p>
@@ -78,15 +78,15 @@ export default function ContactSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <p className="text-sm font-medium tracking-widest uppercase text-[#00E5CC] mb-4">
+          <p className="text-sm font-medium tracking-widest uppercase text-[#A855F7] mb-4">
             Get in Touch
           </p>
-          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
+          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 text-gray-900">
             Let's create something
             <br />
             extraordinary together
           </h2>
-          <p className="text-lg text-white/60">
+          <p className="text-lg text-gray-600">
             Drop us a line and we'll get back to you within 24 hours
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function ContactSection() {
             <div className="group">
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-white/50 mb-3 group-focus-within:text-[#00E5CC] transition-colors duration-500"
+                className="block text-sm font-medium text-gray-500 mb-3 group-focus-within:text-[#A855F7] transition-colors duration-500"
               >
                 Name
               </label>
@@ -113,7 +113,7 @@ export default function ContactSection() {
                   setFormData({ ...formData, name: e.target.value })
                 }
                 required
-                className="w-full bg-transparent border border-white/20 rounded-lg py-4 px-4 text-lg focus:outline-none focus:border-[#00E5CC] transition-colors duration-500 placeholder:text-white/30"
+                className="w-full bg-white border border-gray-200 rounded-lg py-4 px-4 text-lg text-gray-900 focus:outline-none focus:border-[#A855F7] focus:ring-2 focus:ring-[#A855F7]/20 transition-all duration-500 placeholder:text-gray-400"
                 placeholder="Your full name"
               />
             </div>
@@ -121,7 +121,7 @@ export default function ContactSection() {
             <div className="group">
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-white/50 mb-3 group-focus-within:text-[#00E5CC] transition-colors duration-500"
+                className="block text-sm font-medium text-gray-500 mb-3 group-focus-within:text-[#A855F7] transition-colors duration-500"
               >
                 Email
               </label>
@@ -133,7 +133,7 @@ export default function ContactSection() {
                   setFormData({ ...formData, email: e.target.value })
                 }
                 required
-                className="w-full bg-transparent border border-white/20 rounded-lg py-4 px-4 text-lg focus:outline-none focus:border-[#00E5CC] transition-colors duration-500 placeholder:text-white/30"
+                className="w-full bg-white border border-gray-200 rounded-lg py-4 px-4 text-lg text-gray-900 focus:outline-none focus:border-[#A855F7] focus:ring-2 focus:ring-[#A855F7]/20 transition-all duration-500 placeholder:text-gray-400"
                 placeholder="your@email.com"
               />
             </div>
@@ -141,7 +141,7 @@ export default function ContactSection() {
             <div className="group">
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-white/50 mb-3 group-focus-within:text-[#00E5CC] transition-colors duration-500"
+                className="block text-sm font-medium text-gray-500 mb-3 group-focus-within:text-[#A855F7] transition-colors duration-500"
               >
                 Message
               </label>
@@ -153,7 +153,7 @@ export default function ContactSection() {
                 }
                 required
                 rows={5}
-                className="w-full bg-transparent border border-white/20 rounded-lg py-4 px-4 text-lg focus:outline-none focus:border-[#00E5CC] transition-colors duration-500 placeholder:text-white/30 resize-none"
+                className="w-full bg-white border border-gray-200 rounded-lg py-4 px-4 text-lg text-gray-900 focus:outline-none focus:border-[#A855F7] focus:ring-2 focus:ring-[#A855F7]/20 transition-all duration-500 placeholder:text-gray-400 resize-none"
                 placeholder="Tell us about your project..."
               />
             </div>
@@ -167,7 +167,7 @@ export default function ContactSection() {
             <button
               type="submit"
               disabled={isSubmitting || submitted}
-              className="group relative w-full sm:w-auto px-12 py-5 bg-[#00E5CC] hover:bg-[#00D4BB] text-black font-medium tracking-wide rounded-full transition-all duration-500 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-3"
+              className="group relative w-full sm:w-auto px-12 py-5 bg-gradient-to-r from-[#FF6B6B] via-[#A855F7] to-[#4ECDC4] hover:opacity-90 text-white font-medium tracking-wide rounded-full transition-all duration-500 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-3 shadow-lg"
             >
               {submitted ? (
                 "Message Sent!"
