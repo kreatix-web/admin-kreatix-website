@@ -1,0 +1,31 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#A855F7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4ECDC4;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="kGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded square background -->
+  <rect width="128" height="128" rx="24" fill="url(#bgGrad)"/>
+  
+  <!-- Abstract K lettermark -->
+  <!-- Vertical bar of K -->
+  <rect x="36" y="32" width="12" height="64" rx="6" fill="url(#kGrad)"/>
+  
+  <!-- Top diagonal of K -->
+  <path d="M48 56 L80 32 L86 38 L54 62 Z" fill="url(#kGrad)"/>
+  
+  <!-- Bottom diagonal of K -->
+  <path d="M54 66 L86 90 L80 96 L48 72 Z" fill="url(#kGrad)"/>
+  
+  <!-- Creative pixel accent -->
+  <circle cx="88" cy="40" r="6" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="72" y="84" width="8" height="8" rx="2" fill="#FFFFFF" opacity="0.6"/>
+</svg>
