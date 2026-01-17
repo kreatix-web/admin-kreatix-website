@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
   }, []);
 
   return (
-    <div className="bg-black text-white overflow-x-hidden">
+    <div className="bg-[#FFFBF7] text-gray-900 overflow-x-hidden">
       <Navbar />
 
       <main className="px-6 py-16">
@@ -16,9 +16,9 @@ export default function PrivacyPolicy() {
           <h1 className="text-3xl md:text-4xl font-semibold mb-2">
             Privacy Policy — Kreatix
           </h1>
-          <p className="text-white/60 mb-10">Last updated: 29 October 2025</p>
+          <p className="text-gray-500 mb-10">Last updated: 29 October 2025</p>
 
-          <section className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-white/80 prose-li:text-white/80 prose-strong:text-white">
+          <section className="prose max-w-none prose-headings:text-gray-900 prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-900">
             <h2 id="who-we-are" className="mt-10">
               1) Who we are
             </h2>

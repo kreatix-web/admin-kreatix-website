@@ -110,12 +110,12 @@ export default function TestimonialsSection() {
   return (
     <section
       ref={ref}
-      className="py-16 lg:py-324 px-6 bg-gradient-to-b from-black via-[#0A1628] to-black relative overflow-hidden"
+      className="py-16 lg:py-324 px-6 bg-gradient-to-b from-[#FFFBF7] via-[#FFE4D6] to-[#FFFBF7] relative overflow-hidden"
     >
       {/* Background decoration */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#00E5CC] rounded-full filter blur-[150px]" />
-        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#FF6B9D] rounded-full filter blur-[150px]" />
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#A855F7] rounded-full filter blur-[150px]" />
+        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#4ECDC4] rounded-full filter blur-[150px]" />
       </div>
 
       <div className="max-w-7xl mx-auto relative">
@@ -124,13 +124,13 @@ export default function TestimonialsSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <p className="text-sm font-medium tracking-widest uppercase text-[#00E5CC] mb-4">
+          <p className="text-sm font-medium tracking-widest uppercase text-[#FF6B6B] mb-4">
             Testimonials
           </p>
-          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
+          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 text-gray-900">
             What our clients say
           </h2>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Don't just take our word for it - hear from the amazing clients
             we've had the pleasure to work with
           </p>
@@ -157,7 +157,7 @@ export default function TestimonialsSection() {
                 className="flex-shrink-0 w-full md:w-[calc(50%-0.75rem-4px)] lg:w-[calc(33.333%-1rem-4px)]"
               >
                 <div
-                  className={`bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-xl p-6 backdrop-blur-sm hover:from-white/10 hover:to-white/5 transition-all duration-500 h-full ${
+                  className={`bg-white border border-gray-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 h-full ${
                     isVisible
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-12"
@@ -165,18 +165,18 @@ export default function TestimonialsSection() {
                 >
                   {/* Quote icon */}
                   <div className="mb-4">
-                    <Quote size={32} className="text-[#00E5CC]/50" />
+                    <Quote size={32} className="text-[#A855F7]/50" />
                   </div>
 
                   {/* Testimonial text */}
-                  <p className="text-white/80 leading-relaxed mb-6 italic">
+                  <p className="text-gray-700 leading-relaxed mb-6 italic">
                     "{testimonial.content}"
                   </p>
 
                   {/* Author info */}
-                  <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+                  <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-[#00E5CC]/30">
+                      <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-[#A855F7]/30">
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
@@ -185,13 +185,13 @@ export default function TestimonialsSection() {
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white">
+                      <h4 className="font-semibold text-gray-900">
                         {testimonial.name}
                       </h4>
-                      <p className="text-sm text-[#00E5CC]">
+                      <p className="text-sm text-[#A855F7]">
                         {testimonial.role}
                       </p>
-                      <p className="text-xs text-white/60">
+                      <p className="text-xs text-gray-500">
                         {testimonial.company}
                       </p>
                     </div>
@@ -206,7 +206,7 @@ export default function TestimonialsSection() {
             {/* Previous Button */}
             <button
               onClick={goToPrevious}
-              className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110"
+              className="w-10 h-10 rounded-full bg-white hover:bg-gray-50 border border-gray-200 shadow-sm flex items-center justify-center transition-all duration-300 hover:scale-110 text-gray-700"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={20} />
@@ -220,8 +220,8 @@ export default function TestimonialsSection() {
                   onClick={() => goToSlide(index)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     index === currentIndex
-                      ? "w-8 bg-[#00E5CC]"
-                      : "w-2 bg-white/30 hover:bg-white/50"
+                      ? "w-8 bg-gradient-to-r from-[#FF6B6B] to-[#A855F7]"
+                      : "w-2 bg-gray-300 hover:bg-gray-400"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -231,7 +231,7 @@ export default function TestimonialsSection() {
             {/* Next Button */}
             <button
               onClick={goToNext}
-              className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110"
+              className="w-10 h-10 rounded-full bg-white hover:bg-gray-50 border border-gray-200 shadow-sm flex items-center justify-center transition-all duration-300 hover:scale-110 text-gray-700"
               aria-label="Next testimonial"
             >
               <ChevronRight size={20} />
