@@ -8,17 +8,22 @@ export default function TermsOfService() {
   }, []);
 
   return (
-    <div className="bg-[#FFFBF7] text-gray-900 overflow-x-hidden">
+    <div className="bg-dark text-[#EDEDED] overflow-x-hidden">
       <Navbar />
 
-      <main className="px-12 py-16">
+      <main className="px-6 lg:px-16 py-16">
         <div className="mt-24 max-w-3xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-semibold mb-2">
-            Terms of Service — Kreatix
+          <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-4">
+            Legal
+          </p>
+          <h1 className="font-display text-3xl md:text-4xl font-bold mb-2 text-[#EDEDED]">
+            Terms of Service
           </h1>
-          <p className="text-gray-500 mb-10">Last updated: 29 October 2025</p>
+          <p className="text-muted mb-10 font-mono text-sm">
+            Last updated: 29 October 2025
+          </p>
 
-          <section className="prose max-w-none prose-headings:text-gray-900 prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-900">
+          <section className="prose prose-invert max-w-none prose-headings:text-[#EDEDED] prose-headings:font-display prose-p:text-muted prose-li:text-muted prose-strong:text-[#EDEDED] prose-a:text-accent prose-hr:border-dark-border">
             <p>
               These Terms (“Terms”) govern access to and use of the Website and
               any services provided by [Kreatix legal name] (“Kreatix”, “we”,

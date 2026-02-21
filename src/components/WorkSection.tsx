@@ -6,6 +6,7 @@ import {
   ShieldCheck,
   Rocket,
   Crown,
+  ArrowUpRight,
 } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
@@ -23,48 +24,48 @@ const offerings: Offering[] = [
   {
     id: 1,
     title: "Website in a day",
-    badge: "Single‑page",
+    badge: "Single-page",
     description:
-      "For fast‑moving owners and small local businesses that rely on Facebook pages. A polished single‑page site with multiple sections and optional contact/booking forms.",
+      "For fast-moving owners and small local businesses. A polished single-page site with multiple sections and optional contact/booking forms.",
     features: [
-      "Single‑page application",
+      "Single-page application",
       "Multiple content sections",
       "Optional contact/booking forms",
       "Quick launch",
       "Perfect for Facebook uplift",
     ],
-    icon: <Zap className="text-[#FF6B6B]" size={28} />,
+    icon: <Zap className="text-accent" size={24} />,
     image: "/images/template-concept-coffee-shop.jpg",
   },
   {
     id: 2,
-    title: "Multi‑page",
-    badge: "Up to 5 pages",
+    title: "Service & brand sites",
+    badge: "Multi-page",
     description:
-      "Everything in ‘Website in a day’, plus up to 5 pages with multiple sections per page for more depth and SEO coverage.",
+      "Everything in 'Website in a day', additional pages with multiple sections per page for more depth and SEO coverage.",
     features: [
-      "Up to 5 pages",
-      "Section‑rich layouts",
-      "SEO‑ready structure",
+      "Multi-page structure",
+      "Section-rich layouts",
+      "SEO-ready structure",
       "Fast and accessible",
     ],
-    icon: <Layers className="text-[#A855F7]" size={28} />,
+    icon: <Layers className="text-accent" size={24} />,
     image: "/images/multipage.jpg",
   },
   {
     id: 3,
-    title: "E‑commerce",
+    title: "E-commerce",
     badge: "Shop & CMS",
     description:
-      "Multi‑page with product listings and product detail pages, sorting & filters. Manage products and process payments.",
+      "Multi-page with product listings and detail pages, sorting & filters. Manage products and process payments.",
     features: [
       "Product listing & detail pages",
       "Sorting & filters",
-      "CMS‑managed content",
+      "CMS-managed content",
       "Shopping cart & checkout",
       "Payment gateway integration",
     ],
-    icon: <ShoppingCart className="text-[#4ECDC4]" size={28} />,
+    icon: <ShoppingCart className="text-accent" size={24} />,
     image: "/images/ecommerce.jpg",
   },
 ];
@@ -76,205 +77,250 @@ export default function WorkSection() {
     <section
       id="services"
       ref={ref}
-      className="py-16 lg:py-24 px-6 bg-[#FFFBF7]"
+      className="py-24 lg:py-40 px-6 lg:px-16 bg-dark relative"
     >
-      <div className="max-w-[1600px] mx-auto">
+      <div className="max-w-[1400px] mx-auto">
+        {/* Header */}
         <div
-          className={`mb-14 transition-all duration-1000 ease-out ${
+          className={`grid lg:grid-cols-12 gap-8 mb-20 transition-all duration-1000 ease-out ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <p className="text-sm font-medium tracking-widest uppercase text-[#FF6B6B] mb-4">
-            Services
-          </p>
-          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900">
-            Services
-          </h2>
-          <p className="text-gray-600 max-w-2xl mt-4">
-            Websites tailored to your business stage—from fast single‑page
-            builds to multi‑page and full e‑commerce.
-          </p>
+          <div className="lg:col-span-3">
+            <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent">
+              Services
+            </p>
+          </div>
+          <div className="lg:col-span-9">
+            <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold text-[#EDEDED] mb-4">
+              What we build
+            </h2>
+            <p className="text-muted text-lg max-w-2xl">
+              Websites tailored to your business stage — from fast single-page
+              builds to multi-page and full e-commerce.
+            </p>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-          {offerings.map((offering) => (
+        {/* Offering cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {offerings.map((offering, index) => (
             <div
               key={offering.id}
-              className={`group cursor-pointer transition-all duration-1000 ease-out ${
+              className={`group transition-all duration-1000 ease-out ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-12"
               }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="relative overflow-hidden rounded-lg mb-6 aspect-[3/2]">
+              {/* Image */}
+              <div className="relative overflow-hidden rounded-lg mb-6 aspect-[3/2] bg-dark-card">
                 <img
                   src={offering.image}
                   alt={`Illustration for ${offering.title}`}
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
-
-                {/* <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-white/20 transition-all duration-500">
-                    {offering.icon}
-                  </div>
-                </div> */}
+                <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent" />
+                <div className="absolute bottom-4 left-4 w-12 h-12 rounded-lg bg-dark-surface/80 backdrop-blur-sm border border-dark-border flex items-center justify-center">
+                  {offering.icon}
+                </div>
               </div>
 
+              {/* Content */}
               <div className="space-y-3">
-                <p className="text-sm font-medium text-[#FF6B6B] tracking-wide">
-                  {offering.badge}
-                </p>
-                <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 group-hover:text-[#A855F7] transition-colors duration-500">
+                <div className="flex items-center gap-3">
+                  <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-accent bg-accent/10 px-2.5 py-1 rounded">
+                    {offering.badge}
+                  </span>
+                </div>
+                <h3 className="font-display text-2xl lg:text-3xl font-bold text-[#EDEDED] group-hover:text-accent transition-colors duration-300">
                   {offering.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-muted text-sm leading-relaxed">
                   {offering.description}
                 </p>
-                <ul className="mt-2 space-y-2">
+                <ul className="mt-3 space-y-2">
                   {offering.features.map((feature, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-2 text-gray-700"
-                    >
-                      <Check size={16} className="mt-0.5 text-[#4ECDC4]" />
+                    <li key={i} className="flex items-start gap-2.5 text-muted">
+                      <Check
+                        size={14}
+                        className="mt-0.5 text-accent shrink-0"
+                      />
                       <span className="text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 text-[#A855F7] hover:text-gray-900 transition-colors duration-300 mt-3"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs tracking-wider uppercase text-accent hover:text-[#EDEDED] transition-colors duration-300 mt-4 group/link"
                   aria-label={`Get started with ${offering.title}`}
                 >
                   Get started
+                  <ArrowUpRight
+                    size={14}
+                    className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-300"
+                  />
                 </a>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Support/Hosting plans blurb */}
+        {/* Support/Hosting plans */}
         <div
-          className={`mt-14 lg:mt-20 transition-all duration-1000 ease-out ${
+          className={`mt-24 transition-all duration-1000 ease-out ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <div className="rounded-xl border border-gray-200 bg-white shadow-sm p-6 lg:p-8">
-            <div className="mb-6 flex items-start justify-between gap-4">
+          <div className="rounded-xl border border-dark-border bg-dark-surface p-8 lg:p-10">
+            <div className="flex flex-col sm:flex-row items-start justify-between gap-6 mb-10">
               <div>
-                <h4 className="text-xl font-semibold text-gray-900">
-                  Support & Hosting Plans
+                <h4 className="font-display text-2xl font-bold text-[#EDEDED] mb-2">
+                  Support & Hosting
                 </h4>
-                <p className="text-gray-600 mt-1">
-                  Choose a plan that fits your pace—from essentials to growth
-                  and pro-level care.
+                <p className="text-muted">
+                  Beautiful websites deserve proper care.
+                  <br />
+                  Every Kreatix site is supported, secured and optimised —
+                  quietly working in the background while you focus on growing
+                  your business.
                 </p>
               </div>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-gradient-to-r from-[#FF6B6B] to-[#A855F7] text-white hover:opacity-90 transition-opacity duration-300 shrink-0"
+                className="inline-flex items-center gap-2 bg-accent text-dark font-display font-bold text-sm px-6 py-3 rounded-full hover:bg-[#d8f06e] transition-all duration-300 shrink-0"
               >
                 Talk to us
+                <ArrowUpRight size={16} />
               </a>
             </div>
 
             <div className="grid gap-4 md:grid-cols-3">
               {/* Essential */}
-              <div className="group rounded-lg border border-gray-200 bg-gray-50 hover:bg-white hover:shadow-md transition-all p-5">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-[#4ECDC4]/10 border border-[#4ECDC4]/20 flex items-center justify-center text-[#4ECDC4]">
+              <div className="group rounded-lg border border-dark-border bg-dark-card hover:border-accent/20 transition-all duration-300 p-6">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
                     <ShieldCheck size={18} />
                   </div>
                   <div>
-                    <h5 className="font-semibold text-gray-900">Essential</h5>
-                    <p className="text-xs text-gray-500">
-                      Care + secure hosting
+                    <h5 className="font-display font-bold text-[#EDEDED]">
+                      Essential
+                    </h5>
+                    <p className="font-mono text-[10px] tracking-wider uppercase text-muted">
+                      Simple. Secure. Covered.
                     </p>
                   </div>
                 </div>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <Check size={14} className="mt-0.5 text-[#4ECDC4]" />{" "}
-                    Managed hosting
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check size={14} className="mt-0.5 text-[#4ECDC4]" /> Free
-                    SSL & CDN
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check size={14} className="mt-0.5 text-[#4ECDC4]" /> Weekly
-                    backups
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check size={14} className="mt-0.5 text-[#4ECDC4]" /> Email
-                    support
-                  </li>
+                <ul className="space-y-2.5 text-sm text-muted">
+                  {[
+                    "Premium cloud hosting",
+                    "SSL security",
+                    "Ongoing software updates",
+                    "Performance optimisation",
+                    "Security monitoring",
+                    "Email support (within 48 hours)",
+                    "Small content edits (up to 30 mins/month)",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <Check
+                        size={14}
+                        className="mt-0.5 text-accent shrink-0"
+                      />
+                      {item}
+                    </li>
+                  ))}
                 </ul>
+                <br />
+                <p className="font-mono text-[10px] tracking-wider uppercase text-muted">
+                  <strong>Ideal for:</strong> brochure sites, portfolio sites,
+                  “Facebook uplift” builds.
+                </p>
               </div>
 
               {/* Growth */}
-              <div className="group rounded-lg border border-gray-200 bg-gray-50 hover:bg-white hover:shadow-md transition-all p-5">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-[#FF6B6B]/10 border border-[#FF6B6B]/20 flex items-center justify-center text-[#FF6B6B]">
+              <div className="group rounded-lg border border-dark-border bg-dark-card hover:border-accent/20 transition-all duration-300 p-6">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
                     <Rocket size={18} />
                   </div>
                   <div>
-                    <h5 className="font-semibold text-gray-900">Growth</h5>
-                    <p className="text-xs text-gray-500">
-                      Faster support & staging
+                    <h5 className="font-display font-bold text-[#EDEDED]">
+                      Growth
+                    </h5>
+                    <p className="font-mono text-[10px] tracking-wider uppercase text-muted">
+                      More support. More momentum.
                     </p>
                   </div>
                 </div>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <Check size={14} className="mt-0.5 text-[#4ECDC4]" />{" "}
-                    Priority support
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check size={14} className="mt-0.5 text-[#4ECDC4]" /> Uptime
-                    monitoring
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check size={14} className="mt-0.5 text-[#4ECDC4]" />{" "}
-                    Staging site
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check size={14} className="mt-0.5 text-[#4ECDC4]" />{" "}
-                    Monthly report
-                  </li>
+                <ul className="space-y-2.5 text-sm text-muted">
+                  {[
+                    "Everything in Essentials",
+                    "Daily backups",
+                    "Uptime monitoring",
+                    "Up to 1 hour of content updates/month",
+                    "Quarterly performance reviews",
+                    "SEO health monitoring",
+                    "Staging site for safe updates",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <Check
+                        size={14}
+                        className="mt-0.5 text-accent shrink-0"
+                      />
+                      {item}
+                    </li>
+                  ))}
                 </ul>
+                <br />
+                <p className="font-mono text-[10px] tracking-wider uppercase text-muted">
+                  <strong>Ideal for:</strong> multi-page service websites and
+                  growing brands.
+                </p>
               </div>
 
               {/* Pro */}
-              <div className="group rounded-lg border border-gray-200 bg-gray-50 hover:bg-white hover:shadow-md transition-all p-5">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-[#A855F7]/10 border border-[#A855F7]/20 flex items-center justify-center text-[#A855F7]">
+              <div className="group rounded-lg border border-accent/20 bg-dark-card hover:border-accent/40 transition-all duration-300 p-6 relative overflow-hidden">
+                {/* <div className="absolute top-3 right-3 font-mono text-[9px] tracking-[0.2em] uppercase bg-accent text-dark px-2 py-0.5 rounded">
+                  Popular
+                </div> */}
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
                     <Crown size={18} />
                   </div>
                   <div>
-                    <h5 className="font-semibold text-gray-900">Pro</h5>
-                    <p className="text-xs text-gray-500">Performance + SLA</p>
+                    <h5 className="font-display font-bold text-[#EDEDED]">
+                      Pro
+                    </h5>
+                    <p className="font-mono text-[10px] tracking-wider uppercase text-muted">
+                      Fully managed. Fully protected.
+                    </p>
                   </div>
                 </div>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <Check size={14} className="mt-0.5 text-[#4ECDC4]" /> 24/7
-                    SLA
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check size={14} className="mt-0.5 text-[#4ECDC4]" />{" "}
-                    Advanced caching/CDN
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check size={14} className="mt-0.5 text-[#4ECDC4]" />{" "}
-                    Headless CMS support
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check size={14} className="mt-0.5 text-[#4ECDC4]" />{" "}
-                    Quarterly strategy call
-                  </li>
+                <ul className="space-y-2.5 text-sm text-muted">
+                  {[
+                    "Everything in Growth",
+                    "Same-day support response",
+                    "Advanced security protection",
+                    "Daily malware scanning",
+                    "Up to 2 hours of updates/month",
+                    "Ecommerce monitoring",
+                    "Conversion & performance optimisation",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <Check
+                        size={14}
+                        className="mt-0.5 text-accent shrink-0"
+                      />
+                      {item}
+                    </li>
+                  ))}
                 </ul>
+                <br />
+                <p className="font-mono text-[10px] tracking-wider uppercase text-muted">
+                  <strong>Ideal for:</strong> ecommerce, high-traffic sites,
+                  businesses running paid ads.
+                </p>
               </div>
             </div>
           </div>

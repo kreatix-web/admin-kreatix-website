@@ -1,48 +1,93 @@
-import { ChevronDown } from "lucide-react";
-
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden max-w-full">
-      {/* Vibrant creative gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FFF5EB] via-[#FFE4D6] to-[#F0E6FF]">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#FF6B6B] rounded-full filter blur-[150px] opacity-30 animate-pulse" />
-          <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-[#4ECDC4] rounded-full filter blur-[130px] opacity-25 animate-pulse [animation-delay:1s]" />
-          <div className="absolute top-1/2 left-1/2 w-[350px] h-[350px] bg-[#A855F7] rounded-full filter blur-[120px] opacity-20 animate-pulse [animation-delay:2s]" />
-        </div>
-      </div>
+    <section className="relative min-h-screen w-full overflow-hidden bg-dark noise-bg flex flex-col">
+      {/* Subtle grid overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px] z-[1]" />
 
-      {/* Subtle dot pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle,_#00000008_1px,_transparent_1px)] bg-[length:24px_24px]" />
+      {/* Single accent glow - subtle, not a blob party */}
+      <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-accent/5 rounded-full filter blur-[200px] z-[1]" />
 
-      <div className="relative h-full flex items-center justify-center px-6">
-        <div className="text-center max-w-6xl mx-auto">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tighter mb-6 lg:mb-8 text-balance leading-[0.95] opacity-0 animate-fade-in-scale text-gray-900">
-            Crafting Digital
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B6B] via-[#A855F7] to-[#4ECDC4]">
-              Experiences
-            </span>
-          </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 font-light tracking-wide max-w-2xl mx-auto opacity-0 animate-fade-in-up [animation-delay:300ms]">
-            Award-winning web agency building products that people love
+      <div className="relative z-10 flex-1 flex flex-col justify-center px-6 lg:px-16 pt-24 pb-32">
+        <div className="max-w-[1400px] mx-auto w-full">
+          {/* Monospace tag */}
+          <p className="font-mono text-xs tracking-[0.3em] uppercase text-muted mb-8 opacity-0 animate-fade-in-up">
+            Web Studio — Est. 2024
           </p>
+
+          {/* Main headline - editorial, massive */}
+          <h1 className="font-display text-[clamp(2.8rem,8vw,9rem)] font-800 leading-[0.92] tracking-[-0.03em] mb-8 opacity-0 animate-fade-in-scale">
+            <span className="block text-[#EDEDED]">We design & build</span>
+            <span className="block text-accent">websites that convert</span>
+          </h1>
+
+          {/* Subline */}
+          <p className="text-lg lg:text-xl text-muted font-light max-w-xl leading-relaxed opacity-0 animate-fade-in-up [animation-delay:200ms]">
+            For businesses that demand more than a template.
+            <br className="hidden sm:block" />
+            Strategy. Design. Development. Results.
+          </p>
+
+          {/* CTA row */}
+          <div className="flex flex-wrap items-center gap-6 mt-12 opacity-0 animate-fade-in-up [animation-delay:400ms]">
+            <a
+              href="#contact"
+              className="group inline-flex items-center gap-3 bg-accent text-dark font-display font-700 text-sm tracking-wide px-8 py-4 rounded-full hover:bg-[#d8f06e] transition-all duration-300 hover:scale-[1.02]"
+            >
+              Start a project
+              <span className="inline-block group-hover:translate-x-1 transition-transform duration-300">
+                &rarr;
+              </span>
+            </a>
+            <a
+              href="#services"
+              className="inline-flex items-center gap-2 text-muted hover:text-[#EDEDED] font-mono text-xs tracking-wider uppercase transition-colors duration-300"
+            >
+              View services
+            </a>
+          </div>
         </div>
       </div>
 
-      <a
+      {/* Marquee ticker strip */}
+      <div className="relative z-10 border-t border-dark-border overflow-hidden py-4">
+        <div className="animate-marquee flex whitespace-nowrap">
+          {[...Array(2)].map((_, i) => (
+            <span key={i} className="flex items-center gap-8 mr-8">
+              {[
+                "Web Design",
+                "Development",
+                "E-Commerce",
+                "Brand Strategy",
+                "UI/UX",
+                "SEO",
+                "Hosting",
+                "Support",
+              ].map((item) => (
+                <span key={`${i}-${item}`} className="flex items-center gap-8">
+                  <span className="font-mono text-xs tracking-widest uppercase text-muted/60">
+                    {item}
+                  </span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent/40" />
+                </span>
+              ))}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      {/* <a
         href="#intro"
-        className="absolute bottom-12 left-0 right-0 mx-auto w-fit flex flex-col items-center gap-2 text-gray-400 hover:text-gray-900 transition-all duration-700 group opacity-0 animate-fade-in-up [animation-delay:600ms]"
+        className="absolute bottom-20 right-6 lg:right-16 z-10 flex flex-col items-center gap-3 text-muted hover:text-accent transition-colors duration-500 group opacity-0 animate-fade-in-up [animation-delay:600ms]"
         aria-label="Scroll down"
       >
-        <span className="text-xs font-medium tracking-widest uppercase">
+        <span className="font-mono text-[10px] tracking-[0.3em] uppercase">
           Scroll
         </span>
-        <ChevronDown
-          size={24}
-          className="animate-bounce group-hover:translate-y-1 transition-transform duration-500"
-        />
-      </a>
+        <div className="w-px h-12 bg-dark-border relative overflow-hidden">
+          <div className="absolute inset-x-0 top-0 h-1/2 bg-accent/60 animate-bounce" />
+        </div>
+      </a> */}
     </section>
   );
 }

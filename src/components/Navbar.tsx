@@ -16,44 +16,42 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm"
+          ? "bg-dark/90 backdrop-blur-xl border-b border-dark-border"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-20 lg:h-16">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
+        <div className="flex items-center justify-between h-20">
           <a
             href="#"
-            className="text-3xl lg:text-4xl font-extrabold tracking-tight hover:scale-105 transition-all duration-500 py-1"
+            className="font-display text-2xl font-800 tracking-tight text-[#EDEDED] hover:text-accent transition-colors duration-300"
           >
-            <span
-              className="bg-gradient-to-r from-[#FF6B6B] via-[#A855F7] to-[#4ECDC4] bg-clip-text text-transparent tracking-tight"
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 800,
-              }}
-            >
-              Kreatix
-            </span>
+            Kreatix
           </a>
 
-          <div className="hidden md:flex items-center gap-12">
+          <div className="hidden md:flex items-center gap-10">
             {["Services", "About", "Contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-sm font-medium tracking-wide text-gray-600 hover:text-gray-900 transition-colors duration-500"
+                className="font-mono text-xs tracking-[0.15em] uppercase text-muted hover:text-[#EDEDED] transition-colors duration-300"
               >
                 {item}
               </a>
             ))}
+            <a
+              href="#contact"
+              className="ml-2 bg-accent text-dark font-display font-700 text-xs tracking-wide px-5 py-2.5 rounded-full hover:bg-[#d8f06e] transition-all duration-300"
+            >
+              Get in touch
+            </a>
           </div>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-gray-900 transition-transform duration-300 hover:scale-110"
+            className="md:hidden text-[#EDEDED] transition-transform duration-300 hover:scale-110"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -62,18 +60,25 @@ export default function Navbar() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white/98 backdrop-blur-lg border-t border-gray-200 animate-fade-in-up">
-          <div className="px-6 py-8 space-y-6">
+        <div className="md:hidden bg-dark-surface/98 backdrop-blur-xl border-t border-dark-border animate-fade-in-up">
+          <div className="px-6 py-10 space-y-6">
             {["Services", "About", "Contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-lg font-medium text-gray-600 hover:text-gray-900 transition-colors duration-500"
+                className="block font-mono text-sm tracking-wider uppercase text-muted hover:text-[#EDEDED] transition-colors duration-300"
               >
                 {item}
               </a>
             ))}
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="inline-block mt-4 bg-accent text-dark font-display font-700 text-sm tracking-wide px-6 py-3 rounded-full"
+            >
+              Get in touch
+            </a>
           </div>
         </div>
       )}

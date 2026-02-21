@@ -4,19 +4,42 @@ export default function IntroSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="intro" ref={ref} className="py-16 lg:py-32 px-6 bg-[#FFFBF7]">
-      <div className="max-w-5xl mx-auto">
-        <h2
-          className={`text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight text-center text-balance text-gray-900 transition-all duration-1000 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-          }`}
-        >
-          We design and build digital products that{" "}
-          <span className="font-semibold bg-gradient-to-r from-[#FF6B6B] to-[#A855F7] bg-clip-text text-transparent">
-            transform businesses
-          </span>{" "}
-          and create lasting impact in the digital landscape
-        </h2>
+    <section
+      id="intro"
+      ref={ref}
+      className="py-24 lg:py-40 px-6 lg:px-16 bg-dark relative"
+    >
+      <div className="accent-rule mb-24" />
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
+          {/* Left label */}
+          <div
+            className={`lg:col-span-3 transition-all duration-700 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
+          >
+            <p className="font-mono text-xs tracking-[0.3em] uppercase text-muted">
+              What we do
+            </p>
+          </div>
+
+          {/* Right statement */}
+          <div className="lg:col-span-9">
+            <h2
+              className={`font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-600 leading-[1.15] text-[#EDEDED] transition-all duration-1000 ease-out ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-12"
+              }`}
+            >
+              From single-page launches to full e-commerce —{" "}
+              <span className="text-accent">we create digital experiences</span>{" "}
+              rooted in strategy, built with precision, and designed to perform.
+            </h2>
+          </div>
+        </div>
       </div>
     </section>
   );

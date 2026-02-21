@@ -81,14 +81,11 @@ export default function TestimonialsSection() {
 
   const totalCards = testimonials.length;
 
-  // Auto-play carousel
   useEffect(() => {
     if (!isAutoPlaying) return;
-
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % totalCards);
     }, 4000);
-
     return () => clearInterval(interval);
   }, [isAutoPlaying, totalCards]);
 
@@ -110,89 +107,78 @@ export default function TestimonialsSection() {
   return (
     <section
       ref={ref}
-      className="py-16 lg:py-324 px-6 bg-gradient-to-b from-[#FFFBF7] via-[#FFE4D6] to-[#FFFBF7] relative overflow-hidden"
+      className="py-24 lg:py-40 px-6 lg:px-16 bg-dark-surface relative overflow-hidden noise-bg"
     >
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#A855F7] rounded-full filter blur-[150px]" />
-        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#4ECDC4] rounded-full filter blur-[150px]" />
-      </div>
+      {/* Subtle glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent/3 rounded-full filter blur-[200px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-[1400px] mx-auto relative z-10">
         <div
-          className={`text-center mb-16 transition-all duration-1000 ease-out ${
+          className={`grid lg:grid-cols-12 gap-8 mb-16 transition-all duration-1000 ease-out ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <p className="text-sm font-medium tracking-widest uppercase text-[#FF6B6B] mb-4">
-            Testimonials
-          </p>
-          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 text-gray-900">
-            What our clients say
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it - hear from the amazing clients
-            we've had the pleasure to work with
-          </p>
+          <div className="lg:col-span-3">
+            <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent">
+              Testimonials
+            </p>
+          </div>
+          <div className="lg:col-span-9">
+            <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-[#EDEDED]">
+              Clients talk
+            </h2>
+            <p className="text-lg text-muted max-w-2xl">
+              Don't just take our word for it — hear from the people we've built
+              for.
+            </p>
+          </div>
         </div>
 
-        {/* Carousel Container */}
+        {/* Carousel */}
         <div className="relative overflow-hidden">
-          {/* Cards Track */}
           <div
-            className={`flex gap-6 mb-8 px-1 transform will-change-transform ${
-              [
-                "translate-x-0",
-                "-translate-x-[33.333%]",
-                "-translate-x-[66.666%]",
-                "-translate-x-[100%]",
-                "-translate-x-[133.333%]",
-                "-translate-x-[166.666%]",
-              ][currentIndex]
-            }`}
+            className="flex gap-6 mb-10 px-1 transition-transform duration-500 ease-out will-change-transform"
+            style={{
+              transform: `translateX(-${currentIndex * (100 / 3 + 1.5)}%)`,
+            }}
           >
             {testimonials.map((testimonial) => (
               <div
                 key={testimonial.id}
-                className="flex-shrink-0 w-full md:w-[calc(50%-0.75rem-4px)] lg:w-[calc(33.333%-1rem-4px)]"
+                className="flex-shrink-0 w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
               >
                 <div
-                  className={`bg-white border border-gray-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 h-full ${
+                  className={`bg-dark-card border border-dark-border rounded-xl p-8 hover:border-accent/20 transition-all duration-500 h-full flex flex-col ${
                     isVisible
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-12"
                   }`}
                 >
-                  {/* Quote icon */}
-                  <div className="mb-4">
-                    <Quote size={32} className="text-[#A855F7]/50" />
+                  {/* Quote */}
+                  <div className="mb-5">
+                    <Quote size={28} className="text-accent/30" />
                   </div>
 
-                  {/* Testimonial text */}
-                  <p className="text-gray-700 leading-relaxed mb-6 italic">
+                  {/* Text */}
+                  <p className="text-[#EDEDED]/80 leading-relaxed mb-8 flex-1">
                     "{testimonial.content}"
                   </p>
 
-                  {/* Author info */}
-                  <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-[#A855F7]/30">
-                        <img
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                  {/* Author */}
+                  <div className="flex items-center gap-4 pt-6 border-t border-dark-border">
+                    <div className="w-11 h-11 rounded-full overflow-hidden ring-1 ring-accent/20">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">
+                      <h4 className="font-display font-bold text-[#EDEDED] text-sm">
                         {testimonial.name}
                       </h4>
-                      <p className="text-sm text-[#A855F7]">
-                        {testimonial.role}
-                      </p>
-                      <p className="text-xs text-gray-500">
-                        {testimonial.company}
+                      <p className="font-mono text-[10px] tracking-wider uppercase text-muted">
+                        {testimonial.role}, {testimonial.company}
                       </p>
                     </div>
                   </div>
@@ -201,41 +187,39 @@ export default function TestimonialsSection() {
             ))}
           </div>
 
-          {/* Navigation Controls */}
-          <div className="flex items-center justify-center gap-4">
-            {/* Previous Button */}
-            <button
-              onClick={goToPrevious}
-              className="w-10 h-10 rounded-full bg-white hover:bg-gray-50 border border-gray-200 shadow-sm flex items-center justify-center transition-all duration-300 hover:scale-110 text-gray-700"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft size={20} />
-            </button>
-
-            {/* Dot Indicators */}
+          {/* Navigation */}
+          <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
+                  className={`h-px transition-all duration-300 ${
                     index === currentIndex
-                      ? "w-8 bg-gradient-to-r from-[#FF6B6B] to-[#A855F7]"
-                      : "w-2 bg-gray-300 hover:bg-gray-400"
+                      ? "w-10 bg-accent"
+                      : "w-6 bg-dark-border hover:bg-muted"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}
             </div>
 
-            {/* Next Button */}
-            <button
-              onClick={goToNext}
-              className="w-10 h-10 rounded-full bg-white hover:bg-gray-50 border border-gray-200 shadow-sm flex items-center justify-center transition-all duration-300 hover:scale-110 text-gray-700"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight size={20} />
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={goToPrevious}
+                className="w-10 h-10 rounded-full border border-dark-border flex items-center justify-center transition-all duration-300 hover:border-accent text-muted hover:text-accent"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                onClick={goToNext}
+                className="w-10 h-10 rounded-full border border-dark-border flex items-center justify-center transition-all duration-300 hover:border-accent text-muted hover:text-accent"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
           </div>
         </div>
       </div>
