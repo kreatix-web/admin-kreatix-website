@@ -9,12 +9,12 @@ export default function IntroSection() {
     <section
       id="intro"
       ref={ref}
-      className="py-24 lg:py-40 px-6 lg:px-16 bg-dark relative"
+      className="py-24 lg:py-32 px-6 lg:px-16 bg-dark relative"
     >
       {/* Subtle accent glow */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-accent/12 rounded-full filter blur-[180px] pointer-events-none" />
 
-      <div className="accent-rule mb-24" />
+      {/* <div className="accent-rule mb-24" /> */}
       <div className="max-w-[1400px] mx-auto">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           {/* Left label */}
