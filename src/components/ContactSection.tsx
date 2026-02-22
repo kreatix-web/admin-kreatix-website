@@ -57,6 +57,8 @@ export default function ContactSection() {
       ref={ref}
       className="py-24 lg:py-40 px-6 lg:px-16 bg-dark relative"
     >
+      {/* Accent glow */}
+      <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-accent/12 rounded-full filter blur-[200px] pointer-events-none" />
       {/* Success Toast */}
       {showToast && (
         <div className="fixed bottom-6 right-6 z-50 animate-fade-in-up max-w-md">
@@ -85,12 +87,12 @@ export default function ContactSection() {
             <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-6">
               Contact
             </p>
-            <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 text-[#EDEDED] leading-[1.1]">
+            <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 text-[#FFFFFF] leading-[1.1]">
               Let's build
               <br />
               something great.
             </h2>
-            <p className="text-muted text-lg leading-relaxed mb-10">
+            <p className="text-white/60 text-lg leading-relaxed mb-10">
               Tell us about your project and we'll get back to you within 24
               hours.
             </p>
@@ -143,7 +145,7 @@ export default function ContactSection() {
                       setFormData({ ...formData, name: e.target.value })
                     }
                     required
-                    className="w-full bg-dark-card border border-dark-border rounded-lg py-4 px-4 text-[#EDEDED] focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all duration-300 placeholder:text-muted/50"
+                    className="w-full bg-dark-card border border-dark-border rounded-lg py-4 px-4 text-white focus:outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/20 focus:shadow-[0_0_20px_rgba(205,234,104,0.1)] transition-all duration-300 placeholder:text-muted/50"
                     placeholder="Your name"
                   />
                 </div>
@@ -162,7 +164,7 @@ export default function ContactSection() {
                       setFormData({ ...formData, email: e.target.value })
                     }
                     required
-                    className="w-full bg-dark-card border border-dark-border rounded-lg py-4 px-4 text-[#EDEDED] focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all duration-300 placeholder:text-muted/50"
+                    className="w-full bg-dark-card border border-dark-border rounded-lg py-4 px-4 text-white focus:outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/20 focus:shadow-[0_0_20px_rgba(205,234,104,0.1)] transition-all duration-300 placeholder:text-muted/50"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -183,7 +185,7 @@ export default function ContactSection() {
                   }
                   required
                   rows={5}
-                  className="w-full bg-dark-card border border-dark-border rounded-lg py-4 px-4 text-[#EDEDED] focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all duration-300 placeholder:text-muted/50 resize-none"
+                  className="w-full bg-dark-card border border-dark-border rounded-lg py-4 px-4 text-white focus:outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/20 focus:shadow-[0_0_20px_rgba(205,234,104,0.1)] transition-all duration-300 placeholder:text-muted/50 resize-none"
                   placeholder="Tell us about your project..."
                 />
               </div>
@@ -198,7 +200,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting || submitted}
-                  className="group relative inline-flex items-center gap-3 bg-accent text-dark font-display font-bold text-sm tracking-wide px-8 py-4 rounded-full hover:bg-[#d8f06e] transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="group relative inline-flex items-center gap-3 bg-accent text-dark font-display font-bold text-sm tracking-wide px-8 py-4 rounded-full hover:bg-[#d8f06e] transition-all duration-300 hover:scale-[1.02] shadow-[0_0_30px_rgba(205,234,104,0.3)] hover:shadow-[0_0_40px_rgba(205,234,104,0.5)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:shadow-none"
                 >
                   {submitted ? (
                     "Message Sent!"

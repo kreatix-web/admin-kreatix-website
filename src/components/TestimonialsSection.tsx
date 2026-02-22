@@ -110,7 +110,7 @@ export default function TestimonialsSection() {
       className="py-24 lg:py-40 px-6 lg:px-16 bg-dark-surface relative overflow-hidden noise-bg"
     >
       {/* Subtle glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent/3 rounded-full filter blur-[200px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-accent/12 rounded-full filter blur-[200px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto relative z-10">
         <div
@@ -124,10 +124,10 @@ export default function TestimonialsSection() {
             </p>
           </div>
           <div className="lg:col-span-9">
-            <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-[#EDEDED]">
+            <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-[#FFFFFF]">
               Clients talk
             </h2>
-            <p className="text-lg text-muted max-w-2xl">
+            <p className="text-lg text-white/60 max-w-2xl">
               Don't just take our word for it — hear from the people we've built
               for.
             </p>
@@ -148,7 +148,7 @@ export default function TestimonialsSection() {
                 className="flex-shrink-0 w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
               >
                 <div
-                  className={`bg-dark-card border border-dark-border rounded-xl p-8 hover:border-accent/20 transition-all duration-500 h-full flex flex-col ${
+                  className={`bg-dark-card border border-dark-border rounded-xl p-8 hover:border-accent/30 hover:shadow-[0_0_30px_rgba(205,234,104,0.08)] transition-all duration-500 h-full flex flex-col ${
                     isVisible
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-12"
@@ -156,17 +156,17 @@ export default function TestimonialsSection() {
                 >
                   {/* Quote */}
                   <div className="mb-5">
-                    <Quote size={28} className="text-accent/30" />
+                    <Quote size={28} className="text-accent/50" />
                   </div>
 
                   {/* Text */}
-                  <p className="text-[#EDEDED]/80 leading-relaxed mb-8 flex-1">
+                  <p className="text-[#FFFFFF]/80 leading-relaxed mb-8 flex-1">
                     "{testimonial.content}"
                   </p>
 
                   {/* Author */}
                   <div className="flex items-center gap-4 pt-6 border-t border-dark-border">
-                    <div className="w-11 h-11 rounded-full overflow-hidden ring-1 ring-accent/20">
+                    <div className="w-11 h-11 rounded-full overflow-hidden ring-2 ring-accent/25">
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
@@ -174,7 +174,7 @@ export default function TestimonialsSection() {
                       />
                     </div>
                     <div>
-                      <h4 className="font-display font-bold text-[#EDEDED] text-sm">
+                      <h4 className="font-display font-bold text-[#FFFFFF] text-sm">
                         {testimonial.name}
                       </h4>
                       <p className="font-mono text-[10px] tracking-wider uppercase text-muted">

@@ -5,16 +5,16 @@ export default {
     extend: {
       colors: {
         dark: {
-          DEFAULT: '#0C0C0C',
-          surface: '#161616',
-          card: '#1E1E1E',
-          border: '#2A2A2A',
+          DEFAULT: '#1E1E24',
+          surface: '#26262C',
+          card: '#2E2E35',
+          border: '#4A4A55',
         },
         accent: {
           DEFAULT: '#CDEA68',
           dim: '#CDEA68B3',
         },
-        muted: '#7A7A7A',
+        muted: '#A0A0AC',
       },
       fontFamily: {
         display: ['Syne', 'sans-serif'],

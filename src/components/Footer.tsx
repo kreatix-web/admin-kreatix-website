@@ -4,12 +4,14 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="pt-20 pb-8 px-6 lg:px-16 bg-dark border-t border-dark-border">
+    <footer className="pt-20 pb-8 px-6 lg:px-16 bg-dark border-t border-accent/10 relative">
+      {/* Accent glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-accent/8 rounded-full filter blur-[150px] pointer-events-none" />
       <div className="max-w-[1400px] mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           {/* Brand */}
           <div>
-            <h3 className="font-display text-xl font-extrabold tracking-tight text-[#EDEDED] mb-4">
+            <h3 className="font-display text-3xl font-800 tracking-tight text-[#FFFFFF] mb-4">
               Kreatix
             </h3>
             <p className="text-muted text-sm leading-relaxed">
@@ -31,7 +33,7 @@ export default function Footer() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="hover:text-[#EDEDED] transition-colors duration-300 cursor-pointer"
+                  className="hover:text-[#FFFFFF] transition-colors duration-300 cursor-pointer"
                 >
                   {item}
                 </li>
@@ -48,7 +50,7 @@ export default function Footer() {
               {["About", "Contact", "Blog"].map((item) => (
                 <li
                   key={item}
-                  className="hover:text-[#EDEDED] transition-colors duration-300 cursor-pointer"
+                  className="hover:text-[#FFFFFF] transition-colors duration-300 cursor-pointer"
                 >
                   {item}
                 </li>
@@ -89,7 +91,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full border border-dark-border flex items-center justify-center text-muted hover:text-accent hover:border-accent/30 transition-all duration-300"
+                  className="w-9 h-9 rounded-full border border-dark-border flex items-center justify-center text-muted hover:text-accent hover:border-accent/40 transition-all duration-300"
                   aria-label={social.label}
                 >
                   {social.icon}

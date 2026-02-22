@@ -18,7 +18,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-dark/90 backdrop-blur-xl border-b border-dark-border"
+          ? "bg-dark/95 backdrop-blur-xl border-b border-accent/10"
           : "bg-transparent"
       }`}
     >
@@ -26,7 +26,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <a
             href="#"
-            className="font-display text-2xl font-800 tracking-tight text-[#EDEDED] hover:text-accent transition-colors duration-300"
+            className="font-display text-3xl font-800 tracking-tight text-[#FFFFFF] hover:text-accent transition-colors duration-300"
           >
             Kreatix
           </a>
@@ -36,14 +36,14 @@ export default function Navbar() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="font-mono text-xs tracking-[0.15em] uppercase text-muted hover:text-[#EDEDED] transition-colors duration-300"
+                className="font-mono text-xs tracking-[0.15em] uppercase text-muted hover:text-[#FFFFFF] transition-colors duration-300"
               >
                 {item}
               </a>
             ))}
             <a
               href="#contact"
-              className="ml-2 bg-accent text-dark font-display font-700 text-xs tracking-wide px-5 py-2.5 rounded-full hover:bg-[#d8f06e] transition-all duration-300"
+              className="ml-2 bg-accent text-dark font-display font-700 text-xs tracking-wide px-5 py-2.5 rounded-full hover:bg-[#d8f06e] transition-all duration-300 shadow-[0_0_20px_rgba(205,234,104,0.25)] hover:shadow-[0_0_30px_rgba(205,234,104,0.4)]"
             >
               Get in touch
             </a>
@@ -51,7 +51,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-[#EDEDED] transition-transform duration-300 hover:scale-110"
+            className="md:hidden text-[#FFFFFF] transition-transform duration-300 hover:scale-110"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -67,7 +67,7 @@ export default function Navbar() {
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block font-mono text-sm tracking-wider uppercase text-muted hover:text-[#EDEDED] transition-colors duration-300"
+                className="block font-mono text-sm tracking-wider uppercase text-muted hover:text-[#FFFFFF] transition-colors duration-300"
               >
                 {item}
               </a>

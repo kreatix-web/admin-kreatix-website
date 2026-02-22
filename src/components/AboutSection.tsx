@@ -15,6 +15,8 @@ export default function AboutSection() {
       ref={ref}
       className="py-24 lg:py-40 px-6 lg:px-16 bg-dark-surface relative noise-bg"
     >
+      {/* Accent glow */}
+      <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-accent/12 rounded-full filter blur-[200px] pointer-events-none" />
       <div className="max-w-[1400px] mx-auto relative z-10">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
           {/* Left column - image + stats */}
@@ -25,9 +27,9 @@ export default function AboutSection() {
                 : "opacity-0 -translate-x-12"
             }`}
           >
-            <div className="aspect-[4/5] bg-dark-card rounded-lg overflow-hidden mb-12 relative group">
+            <div className="aspect-[4/5] bg-dark-card rounded-lg overflow-hidden mb-12 relative group shadow-[0_0_40px_rgba(205,234,104,0.06)]">
               <div className="w-full h-full bg-[url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-dark/30 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-dark/20 mix-blend-multiply" />
             </div>
 
             {/* Stats row */}
@@ -56,12 +58,12 @@ export default function AboutSection() {
             <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-6">
               About
             </p>
-            <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-700 mb-8 leading-[1.1] text-[#EDEDED]">
+            <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-700 mb-8 leading-[1.1] text-[#FFFFFF]">
               Small team.
               <br />
               Big standards.
             </h2>
-            <div className="space-y-5 text-base lg:text-lg text-muted leading-relaxed">
+            <div className="space-y-5 text-base lg:text-lg text-white/70 leading-relaxed">
               <p>
                 We're a tight-knit collective of designers, developers, and
                 strategists who believe great work comes from giving a damn
@@ -79,7 +81,7 @@ export default function AboutSection() {
             </div>
 
             {/* Accent divider */}
-            <div className="w-16 h-px bg-accent/40 my-10" />
+            <div className="w-20 h-0.5 bg-accent/70 my-10" />
 
             {/* <div className="flex flex-wrap gap-3">
               {[

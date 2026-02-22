@@ -13,7 +13,7 @@ import TermsOfService from "./components/TermsOfService";
 
 function HomePage() {
   return (
-    <div className="bg-dark text-[#EDEDED] overflow-x-hidden">
+    <div className="bg-dark text-[#FFFFFF] overflow-x-hidden">
       <Navbar />
       <Hero />
       <IntroSection />
