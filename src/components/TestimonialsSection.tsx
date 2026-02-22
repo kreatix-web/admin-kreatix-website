@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 type Testimonial = {
@@ -7,18 +8,17 @@ type Testimonial = {
   name: string;
   company: string;
   role: string;
-  content: string;
+  contentKey: string;
   image: string;
 };
 
-const testimonials: Testimonial[] = [
+const testimonialData: Testimonial[] = [
   {
     id: 1,
     name: "Sarah Mitchell",
     company: "TechFlow Inc",
     role: "CEO",
-    content:
-      "Kreatix transformed our digital presence completely. Their attention to detail and creative approach exceeded all expectations.",
+    contentKey: "testimonials.reviews.r1",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
   },
@@ -27,8 +27,7 @@ const testimonials: Testimonial[] = [
     name: "Marcus Chen",
     company: "Innovate Labs",
     role: "CTO",
-    content:
-      "Working with Kreatix was an absolute pleasure. They understood our vision from day one and brought it to life with exceptional design.",
+    contentKey: "testimonials.reviews.r2",
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
   },
@@ -37,8 +36,7 @@ const testimonials: Testimonial[] = [
     name: "Emily Rodriguez",
     company: "Bright Future Co",
     role: "Marketing Director",
-    content:
-      "The level of professionalism and creativity Kreatix brings is unmatched. Our new website has significantly increased engagement.",
+    contentKey: "testimonials.reviews.r3",
     image:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
   },
@@ -47,8 +45,7 @@ const testimonials: Testimonial[] = [
     name: "David Park",
     company: "Momentum Digital",
     role: "Founder",
-    content:
-      "Kreatix doesn't just build websites, they create experiences. Their strategic approach and stunning designs have helped us stand out.",
+    contentKey: "testimonials.reviews.r4",
     image:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
   },
@@ -57,8 +54,7 @@ const testimonials: Testimonial[] = [
     name: "Lisa Anderson",
     company: "NextGen Solutions",
     role: "VP of Marketing",
-    content:
-      "The team at Kreatix delivered beyond our expectations. Their innovative designs and seamless execution made our project a huge success.",
+    contentKey: "testimonials.reviews.r5",
     image:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
   },
@@ -67,8 +63,7 @@ const testimonials: Testimonial[] = [
     name: "James Wilson",
     company: "Creative Studios",
     role: "Creative Director",
-    content:
-      "Working with Kreatix was a game-changer. Their ability to translate our ideas into stunning visual experiences is truly remarkable.",
+    contentKey: "testimonials.reviews.r6",
     image:
       "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
   },
@@ -76,10 +71,11 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsSection() {
   const { ref, isVisible } = useScrollAnimation();
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  const totalCards = testimonials.length;
+  const totalCards = testimonialData.length;
 
   useEffect(() => {
     if (!isAutoPlaying) return;
@@ -120,16 +116,15 @@ export default function TestimonialsSection() {
         >
           <div className="lg:col-span-3">
             <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent">
-              Testimonials
+              {t("testimonials.label")}
             </p>
           </div>
           <div className="lg:col-span-9">
             <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-[#FFFFFF]">
-              Clients talk
+              {t("testimonials.heading")}
             </h2>
             <p className="text-lg text-white/60 max-w-2xl">
-              Don't just take our word for it — hear from the people we've built
-              for.
+              {t("testimonials.subheading")}
             </p>
           </div>
         </div>
@@ -142,7 +137,7 @@ export default function TestimonialsSection() {
               transform: `translateX(-${currentIndex * (100 / 3 + 1.5)}%)`,
             }}
           >
-            {testimonials.map((testimonial) => (
+            {testimonialData.map((testimonial) => (
               <div
                 key={testimonial.id}
                 className="flex-shrink-0 w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
@@ -161,7 +156,7 @@ export default function TestimonialsSection() {
 
                   {/* Text */}
                   <p className="text-[#FFFFFF]/80 leading-relaxed mb-8 flex-1">
-                    "{testimonial.content}"
+                    "{t(testimonial.contentKey)}"
                   </p>
 
                   {/* Author */}
@@ -190,7 +185,7 @@ export default function TestimonialsSection() {
           {/* Navigation */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              {testimonials.map((_, index) => (
+              {testimonialData.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}

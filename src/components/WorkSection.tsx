@@ -8,70 +8,89 @@ import {
   Crown,
   ArrowUpRight,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
-
-type Offering = {
-  id: number;
-  title: string;
-  badge: string;
-  description: string;
-  features: string[];
-  icon: JSX.Element;
-  image: string;
-};
-
-const offerings: Offering[] = [
-  {
-    id: 1,
-    title: "Website in a day",
-    badge: "Single-page",
-    description:
-      "For fast-moving owners and small local businesses. A polished single-page site with multiple sections and optional contact/booking forms.",
-    features: [
-      "Single-page application",
-      "Multiple content sections",
-      "Optional contact/booking forms",
-      "Quick launch",
-      "Perfect for Facebook uplift",
-    ],
-    icon: <Zap className="text-accent" size={24} />,
-    image: "/images/template-concept-coffee-shop.jpg",
-  },
-  {
-    id: 2,
-    title: "Service & brand sites",
-    badge: "Multi-page",
-    description:
-      "Everything in 'Website in a day', additional pages with multiple sections per page for more depth and SEO coverage.",
-    features: [
-      "Multi-page structure",
-      "Section-rich layouts",
-      "SEO-ready structure",
-      "Fast and accessible",
-    ],
-    icon: <Layers className="text-accent" size={24} />,
-    image: "/images/multipage.jpg",
-  },
-  {
-    id: 3,
-    title: "E-commerce",
-    badge: "Shop & CMS",
-    description:
-      "Multi-page with product listings and detail pages, sorting & filters. Manage products and process payments.",
-    features: [
-      "Product listing & detail pages",
-      "Sorting & filters",
-      "CMS-managed content",
-      "Shopping cart & checkout",
-      "Payment gateway integration",
-    ],
-    icon: <ShoppingCart className="text-accent" size={24} />,
-    image: "/images/ecommerce.jpg",
-  },
-];
 
 export default function WorkSection() {
   const { ref, isVisible } = useScrollAnimation();
+  const { t } = useTranslation();
+
+  const offerings = [
+    {
+      id: 1,
+      title: t("work.offerings.singlePage.title"),
+      badge: t("work.offerings.singlePage.badge"),
+      description: t("work.offerings.singlePage.description"),
+      features: [
+        t("work.offerings.singlePage.features.f1"),
+        t("work.offerings.singlePage.features.f2"),
+        t("work.offerings.singlePage.features.f3"),
+        t("work.offerings.singlePage.features.f4"),
+        t("work.offerings.singlePage.features.f5"),
+      ],
+      icon: <Zap className="text-accent" size={24} />,
+      image: "/images/template-concept-coffee-shop.jpg",
+    },
+    {
+      id: 2,
+      title: t("work.offerings.multiPage.title"),
+      badge: t("work.offerings.multiPage.badge"),
+      description: t("work.offerings.multiPage.description"),
+      features: [
+        t("work.offerings.multiPage.features.f1"),
+        t("work.offerings.multiPage.features.f2"),
+        t("work.offerings.multiPage.features.f3"),
+        t("work.offerings.multiPage.features.f4"),
+      ],
+      icon: <Layers className="text-accent" size={24} />,
+      image: "/images/multipage.jpg",
+    },
+    {
+      id: 3,
+      title: t("work.offerings.ecommerce.title"),
+      badge: t("work.offerings.ecommerce.badge"),
+      description: t("work.offerings.ecommerce.description"),
+      features: [
+        t("work.offerings.ecommerce.features.f1"),
+        t("work.offerings.ecommerce.features.f2"),
+        t("work.offerings.ecommerce.features.f3"),
+        t("work.offerings.ecommerce.features.f4"),
+        t("work.offerings.ecommerce.features.f5"),
+      ],
+      icon: <ShoppingCart className="text-accent" size={24} />,
+      image: "/images/ecommerce.jpg",
+    },
+  ];
+
+  const essentialFeatures = [
+    t("work.supportHosting.essential.features.f1"),
+    t("work.supportHosting.essential.features.f2"),
+    t("work.supportHosting.essential.features.f3"),
+    t("work.supportHosting.essential.features.f4"),
+    t("work.supportHosting.essential.features.f5"),
+    t("work.supportHosting.essential.features.f6"),
+    t("work.supportHosting.essential.features.f7"),
+  ];
+
+  const growthFeatures = [
+    t("work.supportHosting.growth.features.f1"),
+    t("work.supportHosting.growth.features.f2"),
+    t("work.supportHosting.growth.features.f3"),
+    t("work.supportHosting.growth.features.f4"),
+    t("work.supportHosting.growth.features.f5"),
+    t("work.supportHosting.growth.features.f6"),
+    t("work.supportHosting.growth.features.f7"),
+  ];
+
+  const proFeatures = [
+    t("work.supportHosting.pro.features.f1"),
+    t("work.supportHosting.pro.features.f2"),
+    t("work.supportHosting.pro.features.f3"),
+    t("work.supportHosting.pro.features.f4"),
+    t("work.supportHosting.pro.features.f5"),
+    t("work.supportHosting.pro.features.f6"),
+    t("work.supportHosting.pro.features.f7"),
+  ];
 
   return (
     <section
@@ -90,16 +109,15 @@ export default function WorkSection() {
         >
           <div className="lg:col-span-3">
             <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent">
-              Services
+              {t("work.label")}
             </p>
           </div>
           <div className="lg:col-span-9">
             <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold text-[#FFFFFF] mb-4">
-              What we build
+              {t("work.heading")}
             </h2>
             <p className="text-white/60 text-lg max-w-2xl">
-              Websites tailored to your business stage — from fast single-page
-              builds to multi-page and full e-commerce.
+              {t("work.subheading")}
             </p>
           </div>
         </div>
@@ -156,9 +174,9 @@ export default function WorkSection() {
                 <a
                   href="#contact"
                   className="inline-flex items-center gap-1.5 font-mono text-xs tracking-wider uppercase text-accent hover:text-[#FFFFFF] transition-colors duration-300 mt-4 group/link"
-                  aria-label={`Get started with ${offering.title}`}
+                  aria-label={`${t("work.getStarted")} - ${offering.title}`}
                 >
-                  Get started
+                  {t("work.getStarted")}
                   <ArrowUpRight
                     size={14}
                     className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-300"
@@ -181,21 +199,19 @@ export default function WorkSection() {
             <div className="flex flex-col sm:flex-row items-start justify-between gap-6 mb-10">
               <div>
                 <h4 className="font-display text-2xl font-bold text-[#FFFFFF] mb-2">
-                  Support & Hosting
+                  {t("work.supportHosting.heading")}
                 </h4>
                 <p className="text-muted">
-                  Beautiful websites deserve proper care.
+                  {t("work.supportHosting.description")}
                   <br />
-                  Every Kreatix site is supported, secured and optimised —
-                  quietly working in the background while you focus on growing
-                  your business.
+                  {t("work.supportHosting.description2")}
                 </p>
               </div>
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 bg-accent text-dark font-display font-bold text-sm px-6 py-3 rounded-full hover:bg-[#d8f06e] transition-all duration-300 shrink-0 shadow-[0_0_25px_rgba(205,234,104,0.3)] hover:shadow-[0_0_35px_rgba(205,234,104,0.5)]"
               >
-                Talk to us
+                {t("work.supportHosting.talkToUs")}
                 <ArrowUpRight size={16} />
               </a>
             </div>
@@ -209,23 +225,15 @@ export default function WorkSection() {
                   </div>
                   <div>
                     <h5 className="font-display font-bold text-[#FFFFFF]">
-                      Essential
+                      {t("work.supportHosting.essential.name")}
                     </h5>
                     <p className="font-mono text-[10px] tracking-wider uppercase text-muted">
-                      Simple. Secure. Covered.
+                      {t("work.supportHosting.essential.tagline")}
                     </p>
                   </div>
                 </div>
                 <ul className="space-y-2.5 text-sm text-muted">
-                  {[
-                    "Premium cloud hosting",
-                    "SSL security",
-                    "Ongoing software updates",
-                    "Performance optimisation",
-                    "Security monitoring",
-                    "Email support (within 48 hours)",
-                    "Small content edits (up to 30 mins/month)",
-                  ].map((item) => (
+                  {essentialFeatures.map((item) => (
                     <li key={item} className="flex items-start gap-2.5">
                       <Check
                         size={14}
@@ -237,8 +245,8 @@ export default function WorkSection() {
                 </ul>
                 <br />
                 <p className="font-mono text-[10px] tracking-wider uppercase text-muted">
-                  <strong>Ideal for:</strong> brochure sites, portfolio sites,
-                  “Facebook uplift” builds.
+                  <strong>{t("work.supportHosting.idealForLabel")}</strong>{" "}
+                  {t("work.supportHosting.essential.idealFor")}
                 </p>
               </div>
 
@@ -250,23 +258,15 @@ export default function WorkSection() {
                   </div>
                   <div>
                     <h5 className="font-display font-bold text-[#FFFFFF]">
-                      Growth
+                      {t("work.supportHosting.growth.name")}
                     </h5>
                     <p className="font-mono text-[10px] tracking-wider uppercase text-muted">
-                      More support. More momentum.
+                      {t("work.supportHosting.growth.tagline")}
                     </p>
                   </div>
                 </div>
                 <ul className="space-y-2.5 text-sm text-muted">
-                  {[
-                    "Everything in Essentials",
-                    "Daily backups",
-                    "Uptime monitoring",
-                    "Up to 1 hour of content updates/month",
-                    "Quarterly performance reviews",
-                    "SEO health monitoring",
-                    "Staging site for safe updates",
-                  ].map((item) => (
+                  {growthFeatures.map((item) => (
                     <li key={item} className="flex items-start gap-2.5">
                       <Check
                         size={14}
@@ -278,8 +278,8 @@ export default function WorkSection() {
                 </ul>
                 <br />
                 <p className="font-mono text-[10px] tracking-wider uppercase text-muted">
-                  <strong>Ideal for:</strong> multi-page service websites and
-                  growing brands.
+                  <strong>{t("work.supportHosting.idealForLabel")}</strong>{" "}
+                  {t("work.supportHosting.growth.idealFor")}
                 </p>
               </div>
 
@@ -294,23 +294,15 @@ export default function WorkSection() {
                   </div>
                   <div>
                     <h5 className="font-display font-bold text-[#FFFFFF]">
-                      Pro
+                      {t("work.supportHosting.pro.name")}
                     </h5>
                     <p className="font-mono text-[10px] tracking-wider uppercase text-muted">
-                      Fully managed. Fully protected.
+                      {t("work.supportHosting.pro.tagline")}
                     </p>
                   </div>
                 </div>
                 <ul className="space-y-2.5 text-sm text-muted">
-                  {[
-                    "Everything in Growth",
-                    "Same-day support response",
-                    "Advanced security protection",
-                    "Daily malware scanning",
-                    "Up to 2 hours of updates/month",
-                    "Ecommerce monitoring",
-                    "Conversion & performance optimisation",
-                  ].map((item) => (
+                  {proFeatures.map((item) => (
                     <li key={item} className="flex items-start gap-2.5">
                       <Check
                         size={14}
@@ -322,8 +314,8 @@ export default function WorkSection() {
                 </ul>
                 <br />
                 <p className="font-mono text-[10px] tracking-wider uppercase text-muted">
-                  <strong>Ideal for:</strong> ecommerce, high-traffic sites,
-                  businesses running paid ads.
+                  <strong>{t("work.supportHosting.idealForLabel")}</strong>{" "}
+                  {t("work.supportHosting.pro.idealFor")}
                 </p>
               </div>
             </div>

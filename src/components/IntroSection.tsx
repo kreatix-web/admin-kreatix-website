@@ -1,7 +1,9 @@
+import { Trans, useTranslation } from "react-i18next";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function IntroSection() {
   const { ref, isVisible } = useScrollAnimation();
+  useTranslation();
 
   return (
     <section
@@ -24,7 +26,7 @@ export default function IntroSection() {
             }`}
           >
             <p className="font-mono text-xs tracking-[0.3em] uppercase text-muted">
-              What we do
+              <Trans i18nKey="intro.label" />
             </p>
           </div>
 
@@ -37,9 +39,10 @@ export default function IntroSection() {
                   : "opacity-0 translate-y-12"
               }`}
             >
-              From single-page launches to full e-commerce —{" "}
-              <span className="text-accent">we create digital experiences</span>{" "}
-              rooted in strategy, built with precision, and designed to perform.
+              <Trans
+                i18nKey="intro.heading"
+                components={{ accent: <span className="text-accent" /> }}
+              />
             </h2>
           </div>
         </div>

@@ -1,12 +1,14 @@
+import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function AboutSection() {
   const { ref, isVisible } = useScrollAnimation();
+  const { t } = useTranslation();
 
   const stats = [
-    { value: "50+", label: "Projects delivered" },
-    { value: "98%", label: "Client satisfaction" },
-    { value: "2024", label: "Founded" },
+    { value: "50+", label: t("about.stats.projects") },
+    { value: "98%", label: t("about.stats.satisfaction") },
+    { value: "2024", label: t("about.stats.founded") },
   ];
 
   return (
@@ -56,28 +58,17 @@ export default function AboutSection() {
             } [transition-delay:200ms]`}
           >
             <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-6">
-              About
+              {t("about.label")}
             </p>
             <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-700 mb-8 leading-[1.1] text-[#FFFFFF]">
-              Small team.
+              {t("about.heading1")}
               <br />
-              Big standards.
+              {t("about.heading2")}
             </h2>
             <div className="space-y-5 text-base lg:text-lg text-white/70 leading-relaxed">
-              <p>
-                We're a tight-knit collective of designers, developers, and
-                strategists who believe great work comes from giving a damn
-                about the details.
-              </p>
-              <p>
-                No bloated teams. No endless meetings. Just focused people
-                building focused products — from concept to launch and beyond.
-              </p>
-              <p>
-                We've partnered with startups and established businesses alike,
-                bringing their visions to life through clean design and
-                bulletproof code.
-              </p>
+              <p>{t("about.description1")}</p>
+              <p>{t("about.description2")}</p>
+              <p>{t("about.description3")}</p>
             </div>
 
             {/* Accent divider */}

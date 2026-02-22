@@ -16,10 +16,13 @@
   },
   "dependencies": {
     "@netlify/neon": "^0.1.0",
+    "i18next": "^25.8.13",
+    "i18next-browser-languagedetector": "^8.2.1",
     "lucide-react": "^0.344.0",
     "netlify-cli": "^23.13.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-i18next": "^16.5.4",
     "react-router-dom": "^7.9.4"
   },
   "devDependencies": {

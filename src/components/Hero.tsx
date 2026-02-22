@@ -1,4 +1,19 @@
+import { useTranslation } from "react-i18next";
+
 export default function Hero() {
+  const { t } = useTranslation();
+
+  const marqueeItems = [
+    t("hero.marquee.webDesign"),
+    t("hero.marquee.development"),
+    t("hero.marquee.ecommerce"),
+    t("hero.marquee.brandStrategy"),
+    t("hero.marquee.uiux"),
+    t("hero.marquee.seo"),
+    t("hero.marquee.hosting"),
+    t("hero.marquee.support"),
+  ];
+
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-dark noise-bg flex flex-col">
       {/* Subtle grid overlay */}
@@ -11,22 +26,22 @@ export default function Hero() {
         <div className="max-w-[1400px] mx-auto w-full">
           {/* Monospace tag */}
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent/80 mb-8 opacity-0 animate-fade-in-up">
-            Web Studio — Est. 2024
+            {t("hero.tag")}
           </p>
 
           {/* Main headline - editorial, massive */}
           <h1 className="font-display text-[clamp(2.8rem,8vw,9rem)] font-800 leading-[0.92] tracking-[-0.03em] mb-8 opacity-0 animate-fade-in-scale">
-            <span className="block text-white">We design & build</span>
+            <span className="block text-white">{t("hero.headline1")}</span>
             <span className="block text-accent drop-shadow-[0_0_40px_rgba(205,234,104,0.3)]">
-              websites that convert
+              {t("hero.headline2")}
             </span>
           </h1>
 
           {/* Subline */}
           <p className="text-lg lg:text-xl text-white/70 font-light max-w-xl leading-relaxed opacity-0 animate-fade-in-up [animation-delay:200ms]">
-            For businesses that demand more than a template.
+            {t("hero.subline1")}
             <br className="hidden sm:block" />
-            Strategy. Design. Development. Results.
+            {t("hero.subline2")}
           </p>
 
           {/* CTA row */}
@@ -35,7 +50,7 @@ export default function Hero() {
               href="#contact"
               className="group inline-flex items-center gap-3 bg-accent text-dark font-display font-700 text-sm tracking-wide px-8 py-4 rounded-full hover:bg-[#d8f06e] transition-all duration-300 hover:scale-[1.02] shadow-[0_0_30px_rgba(205,234,104,0.3)] hover:shadow-[0_0_40px_rgba(205,234,104,0.5)]"
             >
-              Start a project
+              {t("hero.cta")}
               <span className="inline-block group-hover:translate-x-1 transition-transform duration-300">
                 &rarr;
               </span>
@@ -44,7 +59,7 @@ export default function Hero() {
               href="#services"
               className="inline-flex items-center gap-2 text-muted hover:text-[#FFFFFF] font-mono text-xs tracking-wider uppercase transition-colors duration-300"
             >
-              View services
+              {t("hero.viewServices")}
             </a>
           </div>
         </div>
@@ -55,16 +70,7 @@ export default function Hero() {
         <div className="animate-marquee flex whitespace-nowrap">
           {[...Array(2)].map((_, i) => (
             <span key={i} className="flex items-center gap-8 mr-8">
-              {[
-                "Web Design",
-                "Development",
-                "E-Commerce",
-                "Brand Strategy",
-                "UI/UX",
-                "SEO",
-                "Hosting",
-                "Support",
-              ].map((item) => (
+              {marqueeItems.map((item) => (
                 <span key={`${i}-${item}`} className="flex items-center gap-8">
                   <span className="font-mono text-xs tracking-widest uppercase text-muted/70">
                     {item}

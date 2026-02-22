@@ -1,7 +1,9 @@
 import { Twitter, Linkedin, Github, Instagram } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <footer className="pt-20 pb-8 px-6 lg:px-16 bg-dark border-t border-accent/10 relative">
@@ -15,21 +17,21 @@ export default function Footer() {
               Kreatix
             </h3>
             <p className="text-muted text-sm leading-relaxed">
-              Strategy-driven web studio building digital products that perform.
+              {t("footer.tagline")}
             </p>
           </div>
 
           {/* Services */}
           <div>
             <h4 className="font-mono text-[10px] tracking-[0.3em] uppercase text-accent mb-6">
-              Services
+              {t("footer.servicesLabel")}
             </h4>
             <ul className="space-y-3 text-sm text-muted">
               {[
-                "Web Design",
-                "Development",
-                "E-Commerce",
-                "Brand Strategy",
+                t("footer.services.webDesign"),
+                t("footer.services.development"),
+                t("footer.services.ecommerce"),
+                t("footer.services.brandStrategy"),
               ].map((item) => (
                 <li
                   key={item}
@@ -44,10 +46,14 @@ export default function Footer() {
           {/* Company */}
           <div>
             <h4 className="font-mono text-[10px] tracking-[0.3em] uppercase text-accent mb-6">
-              Company
+              {t("footer.companyLabel")}
             </h4>
             <ul className="space-y-3 text-sm text-muted">
-              {["About", "Contact", "Blog"].map((item) => (
+              {[
+                t("footer.company.about"),
+                t("footer.company.contact"),
+                t("footer.company.blog"),
+              ].map((item) => (
                 <li
                   key={item}
                   className="hover:text-[#FFFFFF] transition-colors duration-300 cursor-pointer"
@@ -61,7 +67,7 @@ export default function Footer() {
           {/* Social */}
           <div>
             <h4 className="font-mono text-[10px] tracking-[0.3em] uppercase text-accent mb-6">
-              Connect
+              {t("footer.connectLabel")}
             </h4>
             <div className="flex gap-3">
               {[
@@ -105,20 +111,20 @@ export default function Footer() {
         <div className="accent-rule mb-6" />
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-muted">
           <p className="font-mono text-[11px] tracking-wider">
-            &copy; {currentYear} Kreatix. All rights reserved.
+            {t("footer.copyright", { year: currentYear })}
           </p>
           <div className="flex gap-8">
             <a
               href="/privacy"
               className="font-mono text-[11px] tracking-wider hover:text-accent transition-colors duration-300"
             >
-              Privacy
+              {t("footer.privacy")}
             </a>
             <a
               href="/terms"
               className="font-mono text-[11px] tracking-wider hover:text-accent transition-colors duration-300"
             >
-              Terms
+              {t("footer.terms")}
             </a>
           </div>
         </div>

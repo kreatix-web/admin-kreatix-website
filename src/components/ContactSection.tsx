@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { sql, type ContactSubmission } from "../lib/neon";
 import { ensureSchema } from "../lib/migrate";
 
 export default function ContactSection() {
   const { ref, isVisible } = useScrollAnimation();
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,7 +46,7 @@ export default function ContactSection() {
         setShowToast(false);
       }, 5000);
     } catch (err) {
-      setError("Failed to send message. Please try again.");
+      setError(t("contact.form.error"));
       console.error("Submission error:", err);
     } finally {
       setIsSubmitting(false);
@@ -65,9 +67,11 @@ export default function ContactSection() {
           <div className="bg-accent text-dark px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3">
             <CheckCircle2 size={24} className="flex-shrink-0" />
             <div>
-              <p className="font-display font-bold">Message sent!</p>
+              <p className="font-display font-bold">
+                {t("contact.form.toastTitle")}
+              </p>
               <p className="text-sm text-dark/70">
-                We'll get back to you soon.
+                {t("contact.form.toastDescription")}
               </p>
             </div>
           </div>
@@ -85,35 +89,34 @@ export default function ContactSection() {
             }`}
           >
             <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-6">
-              Contact
+              {t("contact.label")}
             </p>
             <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 text-[#FFFFFF] leading-[1.1]">
-              Let's build
+              {t("contact.heading1")}
               <br />
-              something great.
+              {t("contact.heading2")}
             </h2>
             <p className="text-white/60 text-lg leading-relaxed mb-10">
-              Tell us about your project and we'll get back to you within 24
-              hours.
+              {t("contact.subheading")}
             </p>
 
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-accent" />
                 <span className="text-muted text-sm">
-                  Free project consultation
+                  {t("contact.bullet1")}
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-accent" />
                 <span className="text-muted text-sm">
-                  Transparent pricing, no surprises
+                  {t("contact.bullet2")}
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-accent" />
                 <span className="text-muted text-sm">
-                  Fast turnaround on all projects
+                  {t("contact.bullet3")}
                 </span>
               </div>
             </div>
@@ -135,7 +138,7 @@ export default function ContactSection() {
                     htmlFor="name"
                     className="block font-mono text-[10px] tracking-[0.2em] uppercase text-muted mb-3 group-focus-within:text-accent transition-colors duration-300"
                   >
-                    Name
+                    {t("contact.form.name")}
                   </label>
                   <input
                     type="text"
@@ -146,7 +149,7 @@ export default function ContactSection() {
                     }
                     required
                     className="w-full bg-dark-card border border-dark-border rounded-lg py-4 px-4 text-white focus:outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/20 focus:shadow-[0_0_20px_rgba(205,234,104,0.1)] transition-all duration-300 placeholder:text-muted/50"
-                    placeholder="Your name"
+                    placeholder={t("contact.form.namePlaceholder")}
                   />
                 </div>
                 <div className="group">
@@ -154,7 +157,7 @@ export default function ContactSection() {
                     htmlFor="email"
                     className="block font-mono text-[10px] tracking-[0.2em] uppercase text-muted mb-3 group-focus-within:text-accent transition-colors duration-300"
                   >
-                    Email
+                    {t("contact.form.email")}
                   </label>
                   <input
                     type="email"
@@ -165,7 +168,7 @@ export default function ContactSection() {
                     }
                     required
                     className="w-full bg-dark-card border border-dark-border rounded-lg py-4 px-4 text-white focus:outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/20 focus:shadow-[0_0_20px_rgba(205,234,104,0.1)] transition-all duration-300 placeholder:text-muted/50"
-                    placeholder="your@email.com"
+                    placeholder={t("contact.form.emailPlaceholder")}
                   />
                 </div>
               </div>
@@ -175,7 +178,7 @@ export default function ContactSection() {
                   htmlFor="message"
                   className="block font-mono text-[10px] tracking-[0.2em] uppercase text-muted mb-3 group-focus-within:text-accent transition-colors duration-300"
                 >
-                  Message
+                  {t("contact.form.message")}
                 </label>
                 <textarea
                   id="message"
@@ -186,7 +189,7 @@ export default function ContactSection() {
                   required
                   rows={5}
                   className="w-full bg-dark-card border border-dark-border rounded-lg py-4 px-4 text-white focus:outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/20 focus:shadow-[0_0_20px_rgba(205,234,104,0.1)] transition-all duration-300 placeholder:text-muted/50 resize-none"
-                  placeholder="Tell us about your project..."
+                  placeholder={t("contact.form.messagePlaceholder")}
                 />
               </div>
 
@@ -203,12 +206,12 @@ export default function ContactSection() {
                   className="group relative inline-flex items-center gap-3 bg-accent text-dark font-display font-bold text-sm tracking-wide px-8 py-4 rounded-full hover:bg-[#d8f06e] transition-all duration-300 hover:scale-[1.02] shadow-[0_0_30px_rgba(205,234,104,0.3)] hover:shadow-[0_0_40px_rgba(205,234,104,0.5)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:shadow-none"
                 >
                   {submitted ? (
-                    "Message Sent!"
+                    t("contact.form.sent")
                   ) : isSubmitting ? (
-                    "Sending..."
+                    t("contact.form.sending")
                   ) : (
                     <>
-                      Send message
+                      {t("contact.form.submit")}
                       <Send
                         size={16}
                         className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"

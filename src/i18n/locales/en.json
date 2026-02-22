@@ -1,0 +1,398 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "getInTouch": "Get in touch"
+  },
+  "hero": {
+    "tag": "Web Studio — Est. 2024",
+    "headline1": "We design & build",
+    "headline2": "websites that convert",
+    "subline1": "For businesses that demand more than a template.",
+    "subline2": "Strategy. Design. Development. Results.",
+    "cta": "Start a project",
+    "viewServices": "View services",
+    "marquee": {
+      "webDesign": "Web Design",
+      "development": "Development",
+      "ecommerce": "E-Commerce",
+      "brandStrategy": "Brand Strategy",
+      "uiux": "UI/UX",
+      "seo": "SEO",
+      "hosting": "Hosting",
+      "support": "Support"
+    }
+  },
+  "intro": {
+    "label": "What we do",
+    "heading": "From single-page launches to full e-commerce — <accent>we create digital experiences</accent> rooted in strategy, built with precision, and designed to perform."
+  },
+  "about": {
+    "label": "About",
+    "heading1": "Small team.",
+    "heading2": "Big standards.",
+    "description1": "We're a tight-knit collective of designers, developers, and strategists who believe great work comes from giving a damn about the details.",
+    "description2": "No bloated teams. No endless meetings. Just focused people building focused products — from concept to launch and beyond.",
+    "description3": "We've partnered with startups and established businesses alike, bringing their visions to life through clean design and bulletproof code.",
+    "stats": {
+      "projects": "Projects delivered",
+      "satisfaction": "Client satisfaction",
+      "founded": "Founded"
+    }
+  },
+  "work": {
+    "label": "Services",
+    "heading": "What we build",
+    "subheading": "Websites tailored to your business stage — from fast single-page builds to multi-page and full e-commerce.",
+    "getStarted": "Get started",
+    "offerings": {
+      "singlePage": {
+        "title": "Website in a day",
+        "badge": "Single-page",
+        "description": "For fast-moving owners and small local businesses. A polished single-page site with multiple sections and optional contact/booking forms.",
+        "features": {
+          "f1": "Single-page application",
+          "f2": "Multiple content sections",
+          "f3": "Optional contact/booking forms",
+          "f4": "Quick launch",
+          "f5": "Perfect for Facebook uplift"
+        }
+      },
+      "multiPage": {
+        "title": "Service & brand sites",
+        "badge": "Multi-page",
+        "description": "Everything in 'Website in a day', additional pages with multiple sections per page for more depth and SEO coverage.",
+        "features": {
+          "f1": "Multi-page structure",
+          "f2": "Section-rich layouts",
+          "f3": "SEO-ready structure",
+          "f4": "Fast and accessible"
+        }
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "badge": "Shop & CMS",
+        "description": "Multi-page with product listings and detail pages, sorting & filters. Manage products and process payments.",
+        "features": {
+          "f1": "Product listing & detail pages",
+          "f2": "Sorting & filters",
+          "f3": "CMS-managed content",
+          "f4": "Shopping cart & checkout",
+          "f5": "Payment gateway integration"
+        }
+      }
+    },
+    "supportHosting": {
+      "heading": "Support & Hosting",
+      "description": "Beautiful websites deserve proper care.",
+      "description2": "Every Kreatix site is supported, secured and optimised — quietly working in the background while you focus on growing your business.",
+      "talkToUs": "Talk to us",
+      "essential": {
+        "name": "Essential",
+        "tagline": "Simple. Secure. Covered.",
+        "features": {
+          "f1": "Premium cloud hosting",
+          "f2": "SSL security",
+          "f3": "Ongoing software updates",
+          "f4": "Performance optimisation",
+          "f5": "Security monitoring",
+          "f6": "Email support (within 48 hours)",
+          "f7": "Small content edits (up to 30 mins/month)"
+        },
+        "idealFor": "brochure sites, portfolio sites, \"Facebook uplift\" builds."
+      },
+      "growth": {
+        "name": "Growth",
+        "tagline": "More support. More momentum.",
+        "features": {
+          "f1": "Everything in Essentials",
+          "f2": "Daily backups",
+          "f3": "Uptime monitoring",
+          "f4": "Up to 1 hour of content updates/month",
+          "f5": "Quarterly performance reviews",
+          "f6": "SEO health monitoring",
+          "f7": "Staging site for safe updates"
+        },
+        "idealFor": "multi-page service websites and growing brands."
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "Fully managed. Fully protected.",
+        "features": {
+          "f1": "Everything in Growth",
+          "f2": "Same-day support response",
+          "f3": "Advanced security protection",
+          "f4": "Daily malware scanning",
+          "f5": "Up to 2 hours of updates/month",
+          "f6": "Ecommerce monitoring",
+          "f7": "Conversion & performance optimisation"
+        },
+        "idealFor": "ecommerce, high-traffic sites, businesses running paid ads."
+      },
+      "idealForLabel": "Ideal for:"
+    }
+  },
+  "testimonials": {
+    "label": "Testimonials",
+    "heading": "Clients talk",
+    "subheading": "Don't just take our word for it — hear from the people we've built for.",
+    "reviews": {
+      "r1": "Kreatix transformed our digital presence completely. Their attention to detail and creative approach exceeded all expectations.",
+      "r2": "Working with Kreatix was an absolute pleasure. They understood our vision from day one and brought it to life with exceptional design.",
+      "r3": "The level of professionalism and creativity Kreatix brings is unmatched. Our new website has significantly increased engagement.",
+      "r4": "Kreatix doesn't just build websites, they create experiences. Their strategic approach and stunning designs have helped us stand out.",
+      "r5": "The team at Kreatix delivered beyond our expectations. Their innovative designs and seamless execution made our project a huge success.",
+      "r6": "Working with Kreatix was a game-changer. Their ability to translate our ideas into stunning visual experiences is truly remarkable."
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "heading1": "Let's build",
+    "heading2": "something great.",
+    "subheading": "Tell us about your project and we'll get back to you within 24 hours.",
+    "bullet1": "Free project consultation",
+    "bullet2": "Transparent pricing, no surprises",
+    "bullet3": "Fast turnaround on all projects",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project...",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "sent": "Message Sent!",
+      "error": "Failed to send message. Please try again.",
+      "toastTitle": "Message sent!",
+      "toastDescription": "We'll get back to you soon."
+    }
+  },
+  "footer": {
+    "tagline": "Strategy-driven web studio building digital products that perform.",
+    "servicesLabel": "Services",
+    "companyLabel": "Company",
+    "connectLabel": "Connect",
+    "services": {
+      "webDesign": "Web Design",
+      "development": "Development",
+      "ecommerce": "E-Commerce",
+      "brandStrategy": "Brand Strategy"
+    },
+    "company": {
+      "about": "About",
+      "contact": "Contact",
+      "blog": "Blog"
+    },
+    "copyright": "© {{year}} Kreatix. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "privacy": {
+    "pageTitle": "Privacy Policy — Kreatix",
+    "legalLabel": "Legal",
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: 29 October 2025",
+    "s1": {
+      "title": "1) Who we are",
+      "body1": "Controller: [Kreatix legal name] (\"Kreatix\", \"we\", \"us\").",
+      "address": "Registered address: [full address]",
+      "company": "Company / GEMI / VAT: [numbers]",
+      "contactPrivacy": "Contact (privacy): [privacy@yourdomain]",
+      "euRep": "EU Representative (if outside EU/EEA): [name/email]",
+      "dpo": "Data Protection Officer (if appointed): [name/email]",
+      "body2": "This policy explains how we collect and use personal data when you visit [kreatix.tld] (the \"Website\"), contact us, become a client, or use services we provide (design, development, hosting/reseller, maintenance, support). It also explains when we act as data processor for our clients."
+    },
+    "s2": {
+      "title": "2) Roles: Controller vs Processor",
+      "item1": "We act as Controller for data we collect about Website visitors, prospective clients, clients and their contacts, and billing/admin contacts.",
+      "item2": "We act as Processor when clients engage us to process data on their behalf (e.g., site analytics, forms, hosting, CDNs, email delivery). In those cases, a Data Processing Addendum (DPA) applies, and the client is the Controller. Our standard DPA is available on request at [privacy@yourdomain]."
+    },
+    "s3": {
+      "title": "3) What we collect",
+      "visitors": "From Website visitors",
+      "visitorsItem1": "Device/usage data: IP address, user agent, pages viewed, referral, timestamps, approximate location (country/city), error logs, performance metrics.",
+      "visitorsItem2": "Cookies & similar tech: strictly necessary cookies, and—if consented— analytics/marketing cookies. See §10 Cookies.",
+      "prospects": "From prospects/clients",
+      "prospectsItem1": "Identity & contact: name, company, role, email, phone, postal address.",
+      "prospectsItem2": "Project data: briefs, brand assets, content, credentials you provide to integrate services (e.g., DNS, hosting, analytics).",
+      "prospectsItem3": "Commercial & billing: proposals, contracts, PO numbers, invoices, payment metadata (we don't store full card numbers—our payment processor does).",
+      "hosted": "From hosted/managed services (as Processor)",
+      "hostedBody": "End-user data submitted via client sites (e.g., contact forms, bookings), analytics events, logs. Categories depend on the client's configuration and instructions."
+    },
+    "s4": {
+      "title": "4) Purposes & legal bases (GDPR Art. 6)",
+      "item1": "Provide the Website and services (contract; legitimate interests for security and fraud prevention).",
+      "item2": "Pre-contractual discussions & customer support (contract/steps prior to contract).",
+      "item3": "Billing and accounting (legal obligation; contract).",
+      "item4": "Service improvement, analytics, and debugging (legitimate interests; analytics only with consent where required).",
+      "item5": "Marketing communications (consent; you can withdraw at any time).",
+      "item6": "Legal claims & compliance (legitimate interests; legal obligation)."
+    },
+    "s5": {
+      "title": "5) Sharing & recipients",
+      "body1": "We use vetted sub-processors and service providers to operate our business (hosting/CDN, email, analytics, payments, CRM, task management, logging/monitoring, cloud infrastructure). A current list is available upon request at [privacy@yourdomain]. We require appropriate data protection terms and, where relevant, Standard Contractual Clauses (SCCs) for international transfers outside the EEA/UK.",
+      "body2": "We may disclose data to professional advisors (legal, tax), and where required to competent authorities or to protect rights, safety, or enforce agreements."
+    },
+    "s6": {
+      "title": "6) International transfers",
+      "body": "If data is transferred outside the EEA/UK/Switzerland, we rely on an adequacy decision or appropriate safeguards (e.g., SCCs plus supplementary measures). Details available on request."
+    },
+    "s7": {
+      "title": "7) Retention",
+      "body": "We keep personal data only as long as necessary for the purposes above:",
+      "item1": "Website logs: [30–180 days] (security/diagnostics).",
+      "item2": "CRM/sales records: [3 years] after last interaction or per statutory limits.",
+      "item3": "Contracts/invoices: [10 years] (or as required by tax law).",
+      "item4": "Project/hosting data: for the engagement term; limited backups [30–90 days] after termination unless longer retention is agreed or required by law."
+    },
+    "s8": {
+      "title": "8) Security",
+      "body": "We implement technical and organizational measures appropriate to risk, including access controls, encryption in transit and at rest (where supported), least-privilege, MFA, secure development practices, and vendor due diligence. No method of transmission/storage is 100% secure."
+    },
+    "s9": {
+      "title": "9) Your rights (EEA/UK/Swiss residents)",
+      "body": "You may have the right to access, rectify, erase, restrict, object, data portability, and to withdraw consent at any time (without affecting prior processing). To exercise rights, contact [privacy@yourdomain]. You also have the right to complain to a supervisory authority. In Greece, this is the Hellenic Data Protection Authority (see dpa.gr). If we process your data on behalf of a client, please contact that client (the Controller) first."
+    },
+    "s10": {
+      "title": "10) Cookies & similar technologies",
+      "body": "We use:",
+      "item1": "Strictly necessary cookies (always on): site functionality, security.",
+      "item2": "Analytics cookies (consent-based in the EEA/UK as required): usage statistics to improve our services.",
+      "item3": "Marketing/ads cookies (consent-based): only if we run campaigns.",
+      "body2": "On your first visit, our banner will request consent for non-essential cookies. You can change preferences anytime via [Cookie Settings link]. For details, see our Cookie Policy (recommended as a separate page linked from the footer and banner)."
+    },
+    "s11": {
+      "title": "11) Processor activities & DPA summary",
+      "body": "When we act as Processor:",
+      "item1": "We only process data on documented instructions from the client.",
+      "item2": "We ensure confidentiality, sub-processor flow-downs, assistance with data subject requests and security incidents, and deletion/return of data at end of engagement.",
+      "item3": "We notify clients of security incidents without undue delay and cooperate on assessments and DPIAs.",
+      "item4": "The full terms are in our Data Processing Addendum."
+    },
+    "s12": {
+      "title": "12) Children",
+      "body": "Our services are not directed to children under 16 (or the age defined by local law). We do not knowingly collect such data. If you believe we have, contact us to delete it."
+    },
+    "s13": {
+      "title": "13) Changes",
+      "body": "We may update this policy from time to time. Material changes will be posted on this page and, where appropriate, notified to you. Please review periodically."
+    },
+    "contactLine": "Contact: [privacy@yourdomain] | Postal: [full address]"
+  },
+  "terms": {
+    "pageTitle": "Terms of Service — Kreatix",
+    "legalLabel": "Legal",
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: 29 October 2025",
+    "intro": "These Terms (\"Terms\") govern access to and use of the Website and any services provided by [Kreatix legal name] (\"Kreatix\", \"we\", \"us\"). By using our Website or engaging our services, you agree to these Terms.",
+    "s1": {
+      "title": "1) Scope of services",
+      "body": "We provide design, development, integration, hosting/reseller services, maintenance, support, consulting, and related deliverables (the \"Services\"). Specific features, timelines, and prices are defined in a Proposal, Statement of Work (SOW), or Order Form (each an \"Order\"). If there is a conflict, the Order prevails over these Terms."
+    },
+    "s2": {
+      "title": "2) Proposals, estimates & change control",
+      "body": "Quotes and timelines are estimates unless expressly stated as fixed. Any out-of-scope requests, third-party costs, or additional rounds of revision will require a written Change Order (email suffices) with adjusted scope, fees, and timelines."
+    },
+    "s3": {
+      "title": "3) Client responsibilities",
+      "body": "You will:",
+      "item1": "Provide accurate and timely content, brand assets, approvals, and access/credentials.",
+      "item2": "Obtain all necessary rights and licenses to content you supply.",
+      "item3": "Ensure your use of the Services and deliverables complies with applicable laws (including privacy, e-commerce, consumer protection).",
+      "item4": "Not upload malware or unlawful content, nor attempt to disrupt the Services.",
+      "body2": "Delays in materials/approvals may shift timelines and incur additional costs."
+    },
+    "s4": {
+      "title": "4) Fees, billing & taxes",
+      "item1": "Fees are as stated in the Order (EUR unless specified otherwise).",
+      "item2": "Unless otherwise stated, 50% upfront and 50% on delivery; retainers and maintenance plans are billed in advance (monthly/annual).",
+      "item3": "Invoices are due [14] days from issue. Late amounts may accrue interest at [1.5% per month] (or legal maximum).",
+      "item4": "Fees are exclusive of VAT and other taxes, which you must pay where applicable.",
+      "item5": "Third-party platform costs (e.g., domains, Vercel/Netlify, Shopify, email services, payment gateways) are your responsibility unless the Order says otherwise."
+    },
+    "s5": {
+      "title": "5) Ownership & IP",
+      "item1": "Client Materials you provide remain yours.",
+      "item2": "Deliverables (final designs, site code we create specifically for you) are assigned to you upon full payment of all fees due for those Deliverables, except for Kreatix Tools (our pre-existing or generic components, frameworks, libraries, processes), which remain our property. We grant you a perpetual, worldwide, royalty-free license to use such Kreatix Tools solely as embedded in the Deliverables.",
+      "item3": "Open-source components are licensed under their respective licenses."
+    },
+    "s6": {
+      "title": "6) Licenses to us",
+      "body": "You grant us a non-exclusive license to use your Client Materials solely to perform the Services and to showcase the completed project in our portfolio and marketing (unless you opt out in writing)."
+    },
+    "s7": {
+      "title": "7) Third-party services & dependencies",
+      "body": "We may integrate or rely on third-party services (hosting, CDNs, analytics, email, payments). Those are governed by their own terms and service levels; we are not responsible for their acts/omissions. We will use reasonable efforts to select reputable providers and will notify you of material provider changes."
+    },
+    "s8": {
+      "title": "8) Acceptance & warranty period",
+      "body": "Deliverables will be deemed accepted upon the earlier of (a) your written acceptance or go-live, or (b) [10] days after delivery if no material defects are reported. We provide a [30–60] day warranty after acceptance to fix material defects that prevent the Deliverables from functioning as specified in the Order. This warranty does not cover changes in third-party APIs/services, new feature requests, or issues caused by unauthorized modifications."
+    },
+    "s9": {
+      "title": "9) Maintenance & support",
+      "body": "Ongoing maintenance/support, SLAs, monitoring, uptime targets, and response times apply only if purchased in a maintenance plan or set out in the Order. Otherwise, assistance is billed time-and-materials."
+    },
+    "s10": {
+      "title": "10) SEO, accessibility & compliance disclaimers",
+      "body": "We do not guarantee search rankings, advertising performance, or legal compliance outcomes. If specified in the Order, we will implement best-practice technical SEO and WCAG-informed patterns, but outcomes depend on content, competition, and third-party platforms. Legal compliance (cookie consent, privacy notices, consumer law, sector regulations) remains your responsibility unless expressly included."
+    },
+    "s11": {
+      "title": "11) Confidentiality",
+      "body": "Each party will keep the other's Confidential Information confidential and use it only for performing the Agreement, protecting it with reasonable care. Exceptions apply for information that is public, independently developed, or rightfully obtained from others without duty of confidentiality."
+    },
+    "s12": {
+      "title": "12) Data protection",
+      "body": "When we act as Controller, our Privacy Policy applies. Where we process personal data on your behalf, our DPA forms part of the Agreement."
+    },
+    "s13": {
+      "title": "13) Term, suspension & termination",
+      "item1": "Term begins on the Order effective date and continues until completion or as otherwise stated.",
+      "item2": "We may suspend or terminate for material breach (including non-payment) after [7] days' notice to cure.",
+      "item3": "Either party may terminate for convenience on [30] days' written notice for ongoing/retainer services (fees due up to termination apply).",
+      "item4": "Effect of termination: You pay for all Services performed and committed costs to date; we will deliver work-in-progress and, upon request, provide a reasonable handover (billed at standard rates). We will delete/return client data per the DPA or your instructions, subject to legal retention."
+    },
+    "s14": {
+      "title": "14) Warranties & disclaimers",
+      "body": "We warrant we will perform the Services with reasonable skill and care. Except as expressly stated, the Services and Deliverables are provided \"as is\" and we disclaim all other warranties, including implied warranties of merchantability, fitness for a particular purpose, and non-infringement."
+    },
+    "s15": {
+      "title": "15) Limitation of liability",
+      "item1": "To the maximum extent permitted by law: Neither party is liable for indirect, incidental, special, consequential, exemplary, or punitive damages (including lost profits, revenue, or data).",
+      "item2": "Each party's aggregate liability arising out of or relating to the Agreement is capped at the amounts paid or payable to Kreatix in the 12 months preceding the event giving rise to liability (or, for fixed projects, the total fee for the relevant Order).",
+      "item3": "Nothing limits liability for death/personal injury caused by negligence, fraud, or liability that cannot be limited by law."
+    },
+    "s16": {
+      "title": "16) Indemnities",
+      "item1": "Client indemnity: You will defend and indemnify Kreatix against third-party claims arising from (a) your content or instructions, (b) your breach of these Terms, or (c) your use of Deliverables contrary to the Order.",
+      "item2": "Kreatix indemnity: We will defend and indemnify you against third-party claims that the Deliverables infringe IP rights, except to the extent caused by your content, combinations not provided by us, or modifications not made by us. Remedies may include modification, replacement, or refund of the affected Deliverable's fees."
+    },
+    "s17": {
+      "title": "17) Non-solicitation",
+      "body": "During the engagement and for [12] months thereafter, neither party will solicit for employment the other's personnel who directly worked on the project, except via general public advertisements."
+    },
+    "s18": {
+      "title": "18) Force majeure",
+      "body": "Neither party is liable for delays or failures due to events beyond reasonable control (e.g., outages, cyber incidents, governmental actions, natural disasters), provided reasonable mitigation."
+    },
+    "s19": {
+      "title": "19) Assignment & subcontracting",
+      "body": "You may not assign the Agreement without our consent (not to be unreasonably withheld). We may subcontract elements of the Services, remaining responsible for subcontractors' performance."
+    },
+    "s20": {
+      "title": "20) Governing law & venue",
+      "body": "These Terms and any disputes are governed by the laws of Greece (excluding conflict-of-laws principles). Courts of Athens, Greece have exclusive jurisdiction. If you prefer a different jurisdiction, specify it in the Order."
+    },
+    "s21": {
+      "title": "21) Notices",
+      "body": "Notices must be in writing and sent to the contacts in the Order or:",
+      "body2": "Kreatix: [legal@yourdomain], [postal address].",
+      "body3": "Notices are deemed received on confirmation of delivery or 2 business days after dispatch."
+    },
+    "s22": {
+      "title": "22) Entire agreement; severability; waiver",
+      "body": "These Terms + the Order + the DPA (if applicable) are the entire agreement. If a provision is unenforceable, the remainder stays in effect. No waiver is effective unless in writing."
+    }
+  }
+}

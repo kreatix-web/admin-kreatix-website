@@ -1,11 +1,14 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 export default function PrivacyPolicy() {
+  const { t } = useTranslation();
+
   useEffect(() => {
-    document.title = "Privacy Policy — Kreatix";
-  }, []);
+    document.title = t("privacy.pageTitle");
+  }, [t]);
 
   return (
     <div className="bg-dark text-[#FFFFFF] overflow-x-hidden">
@@ -14,264 +17,136 @@ export default function PrivacyPolicy() {
       <main className="px-6 lg:px-16 py-16">
         <div className="mt-24 max-w-3xl mx-auto">
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-4">
-            Legal
+            {t("privacy.legalLabel")}
           </p>
           <h1 className="font-display text-3xl md:text-4xl font-bold mb-2 text-[#FFFFFF]">
-            Privacy Policy
+            {t("privacy.title")}
           </h1>
           <p className="text-muted mb-10 font-mono text-sm">
-            Last updated: 29 October 2025
+            {t("privacy.lastUpdated")}
           </p>
 
           <section className="prose prose-invert max-w-none prose-headings:text-[#FFFFFF] prose-headings:font-display prose-p:text-muted prose-li:text-muted prose-strong:text-[#FFFFFF] prose-a:text-accent prose-hr:border-dark-border">
             <h2 id="who-we-are" className="mt-10">
-              1) Who we are
+              {t("privacy.s1.title")}
             </h2>
             <p>
-              Controller: [Kreatix legal name] (“Kreatix”, “we”, “us”).
+              {t("privacy.s1.body1")}
               <br />
-              Registered address: [full address]
+              {t("privacy.s1.address")}
               <br />
-              Company / GEMI / VAT: [numbers]
+              {t("privacy.s1.company")}
               <br />
-              Contact (privacy): [privacy@yourdomain]
+              {t("privacy.s1.contactPrivacy")}
               <br />
-              EU Representative (if outside EU/EEA): [name/email]
+              {t("privacy.s1.euRep")}
               <br />
-              Data Protection Officer (if appointed): [name/email]
+              {t("privacy.s1.dpo")}
             </p>
-            <p>
-              This policy explains how we collect and use personal data when you
-              visit [kreatix.tld] (the “Website”), contact us, become a client,
-              or use services we provide (design, development, hosting/reseller,
-              maintenance, support). It also explains when we act as data
-              processor for our clients.
-            </p>
+            <p>{t("privacy.s1.body2")}</p>
 
             <h2 id="roles" className="mt-10">
-              2) Roles: Controller vs Processor
+              {t("privacy.s2.title")}
             </h2>
             <ul>
-              <li>
-                We act as Controller for data we collect about Website visitors,
-                prospective clients, clients and their contacts, and
-                billing/admin contacts.
-              </li>
-              <li>
-                We act as Processor when clients engage us to process data on
-                their behalf (e.g., site analytics, forms, hosting, CDNs, email
-                delivery). In those cases, a Data Processing Addendum (DPA)
-                applies, and the client is the Controller. Our standard DPA is
-                available on request at [privacy@yourdomain].
-              </li>
+              <li>{t("privacy.s2.item1")}</li>
+              <li>{t("privacy.s2.item2")}</li>
             </ul>
 
             <h2 id="what-we-collect" className="mt-10">
-              3) What we collect
+              {t("privacy.s3.title")}
             </h2>
-            <h3>From Website visitors</h3>
+            <h3>{t("privacy.s3.visitors")}</h3>
             <ul>
-              <li>
-                Device/usage data: IP address, user agent, pages viewed,
-                referral, timestamps, approximate location (country/city), error
-                logs, performance metrics.
-              </li>
-              <li>
-                Cookies &amp; similar tech: strictly necessary cookies, and—if
-                consented— analytics/marketing cookies. See §10 Cookies.
-              </li>
+              <li>{t("privacy.s3.visitorsItem1")}</li>
+              <li>{t("privacy.s3.visitorsItem2")}</li>
             </ul>
-            <h3>From prospects/clients</h3>
+            <h3>{t("privacy.s3.prospects")}</h3>
             <ul>
-              <li>
-                Identity &amp; contact: name, company, role, email, phone,
-                postal address.
-              </li>
-              <li>
-                Project data: briefs, brand assets, content, credentials you
-                provide to integrate services (e.g., DNS, hosting, analytics).
-              </li>
-              <li>
-                Commercial &amp; billing: proposals, contracts, PO numbers,
-                invoices, payment metadata (we don’t store full card numbers—our
-                payment processor does).
-              </li>
+              <li>{t("privacy.s3.prospectsItem1")}</li>
+              <li>{t("privacy.s3.prospectsItem2")}</li>
+              <li>{t("privacy.s3.prospectsItem3")}</li>
             </ul>
-            <h3>From hosted/managed services (as Processor)</h3>
-            <p>
-              End-user data submitted via client sites (e.g., contact forms,
-              bookings), analytics events, logs. Categories depend on the
-              client’s configuration and instructions.
-            </p>
+            <h3>{t("privacy.s3.hosted")}</h3>
+            <p>{t("privacy.s3.hostedBody")}</p>
 
             <h2 id="purposes" className="mt-10">
-              4) Purposes &amp; legal bases (GDPR Art. 6)
+              {t("privacy.s4.title")}
             </h2>
             <ul>
-              <li>
-                Provide the Website and services (contract; legitimate interests
-                for security and fraud prevention).
-              </li>
-              <li>
-                Pre-contractual discussions &amp; customer support
-                (contract/steps prior to contract).
-              </li>
-              <li>Billing and accounting (legal obligation; contract).</li>
-              <li>
-                Service improvement, analytics, and debugging (legitimate
-                interests; analytics only with consent where required).
-              </li>
-              <li>
-                Marketing communications (consent; you can withdraw at any
-                time).
-              </li>
-              <li>
-                Legal claims &amp; compliance (legitimate interests; legal
-                obligation).
-              </li>
+              <li>{t("privacy.s4.item1")}</li>
+              <li>{t("privacy.s4.item2")}</li>
+              <li>{t("privacy.s4.item3")}</li>
+              <li>{t("privacy.s4.item4")}</li>
+              <li>{t("privacy.s4.item5")}</li>
+              <li>{t("privacy.s4.item6")}</li>
             </ul>
 
             <h2 id="sharing" className="mt-10">
-              5) Sharing &amp; recipients
+              {t("privacy.s5.title")}
             </h2>
-            <p>
-              We use vetted sub-processors and service providers to operate our
-              business (hosting/CDN, email, analytics, payments, CRM, task
-              management, logging/monitoring, cloud infrastructure). A current
-              list is available upon request at [privacy@yourdomain]. We require
-              appropriate data protection terms and, where relevant, Standard
-              Contractual Clauses (SCCs) for international transfers outside the
-              EEA/UK.
-            </p>
-            <p>
-              We may disclose data to professional advisors (legal, tax), and
-              where required to competent authorities or to protect rights,
-              safety, or enforce agreements.
-            </p>
+            <p>{t("privacy.s5.body1")}</p>
+            <p>{t("privacy.s5.body2")}</p>
 
             <h2 id="transfers" className="mt-10">
-              6) International transfers
+              {t("privacy.s6.title")}
             </h2>
-            <p>
-              If data is transferred outside the EEA/UK/Switzerland, we rely on
-              an adequacy decision or appropriate safeguards (e.g., SCCs plus
-              supplementary measures). Details available on request.
-            </p>
+            <p>{t("privacy.s6.body")}</p>
 
             <h2 id="retention" className="mt-10">
-              7) Retention
+              {t("privacy.s7.title")}
             </h2>
-            <p>
-              We keep personal data only as long as necessary for the purposes
-              above:
-            </p>
+            <p>{t("privacy.s7.body")}</p>
             <ul>
-              <li>Website logs: [30–180 days] (security/diagnostics).</li>
-              <li>
-                CRM/sales records: [3 years] after last interaction or per
-                statutory limits.
-              </li>
-              <li>
-                Contracts/invoices: [10 years] (or as required by tax law).
-              </li>
-              <li>
-                Project/hosting data: for the engagement term; limited backups
-                [30–90 days] after termination unless longer retention is agreed
-                or required by law.
-              </li>
+              <li>{t("privacy.s7.item1")}</li>
+              <li>{t("privacy.s7.item2")}</li>
+              <li>{t("privacy.s7.item3")}</li>
+              <li>{t("privacy.s7.item4")}</li>
             </ul>
 
             <h2 id="security" className="mt-10">
-              8) Security
+              {t("privacy.s8.title")}
             </h2>
-            <p>
-              We implement technical and organizational measures appropriate to
-              risk, including access controls, encryption in transit and at rest
-              (where supported), least-privilege, MFA, secure development
-              practices, and vendor due diligence. No method of
-              transmission/storage is 100% secure.
-            </p>
+            <p>{t("privacy.s8.body")}</p>
 
             <h2 id="rights" className="mt-10">
-              9) Your rights (EEA/UK/Swiss residents)
+              {t("privacy.s9.title")}
             </h2>
-            <p>
-              You may have the right to access, rectify, erase, restrict,
-              object, data portability, and to withdraw consent at any time
-              (without affecting prior processing). To exercise rights, contact
-              [privacy@yourdomain]. You also have the right to complain to a
-              supervisory authority. In Greece, this is the Hellenic Data
-              Protection Authority (see dpa.gr). If we process your data on
-              behalf of a client, please contact that client (the Controller)
-              first.
-            </p>
+            <p>{t("privacy.s9.body")}</p>
 
             <h2 id="cookies" className="mt-10">
-              10) Cookies &amp; similar technologies
+              {t("privacy.s10.title")}
             </h2>
-            <p>We use:</p>
+            <p>{t("privacy.s10.body")}</p>
             <ul>
-              <li>
-                Strictly necessary cookies (always on): site functionality,
-                security.
-              </li>
-              <li>
-                Analytics cookies (consent-based in the EEA/UK as required):
-                usage statistics to improve our services.
-              </li>
-              <li>
-                Marketing/ads cookies (consent-based): only if we run campaigns.
-              </li>
+              <li>{t("privacy.s10.item1")}</li>
+              <li>{t("privacy.s10.item2")}</li>
+              <li>{t("privacy.s10.item3")}</li>
             </ul>
-            <p>
-              On your first visit, our banner will request consent for
-              non-essential cookies. You can change preferences anytime via
-              [Cookie Settings link]. For details, see our Cookie Policy
-              (recommended as a separate page linked from the footer and
-              banner).
-            </p>
+            <p>{t("privacy.s10.body2")}</p>
 
             <h2 id="processor" className="mt-10">
-              11) Processor activities &amp; DPA summary
+              {t("privacy.s11.title")}
             </h2>
-            <p>When we act as Processor:</p>
+            <p>{t("privacy.s11.body")}</p>
             <ul>
-              <li>
-                We only process data on documented instructions from the client.
-              </li>
-              <li>
-                We ensure confidentiality, sub-processor flow-downs, assistance
-                with data subject requests and security incidents, and
-                deletion/return of data at end of engagement.
-              </li>
-              <li>
-                We notify clients of security incidents without undue delay and
-                cooperate on assessments and DPIAs.
-              </li>
-              <li>The full terms are in our Data Processing Addendum.</li>
+              <li>{t("privacy.s11.item1")}</li>
+              <li>{t("privacy.s11.item2")}</li>
+              <li>{t("privacy.s11.item3")}</li>
+              <li>{t("privacy.s11.item4")}</li>
             </ul>
 
             <h2 id="children" className="mt-10">
-              12) Children
+              {t("privacy.s12.title")}
             </h2>
-            <p>
-              Our services are not directed to children under 16 (or the age
-              defined by local law). We do not knowingly collect such data. If
-              you believe we have, contact us to delete it.
-            </p>
+            <p>{t("privacy.s12.body")}</p>
 
             <h2 id="changes" className="mt-10">
-              13) Changes
+              {t("privacy.s13.title")}
             </h2>
-            <p>
-              We may update this policy from time to time. Material changes will
-              be posted on this page and, where appropriate, notified to you.
-              Please review periodically.
-            </p>
+            <p>{t("privacy.s13.body")}</p>
 
-            <p className="mt-6">
-              Contact: [privacy@yourdomain] | Postal: [full address]
-            </p>
+            <p className="mt-6">{t("privacy.contactLine")}</p>
           </section>
         </div>
       </main>
