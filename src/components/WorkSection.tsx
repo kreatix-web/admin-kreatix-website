@@ -141,7 +141,6 @@ export default function WorkSection() {
                   alt={`Illustration for ${offering.title}`}
                   className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent" />
                 <div className="absolute bottom-4 left-4 w-12 h-12 rounded-lg bg-dark-surface/80 backdrop-blur-sm border border-dark-border flex items-center justify-center">
                   {offering.icon}
                 </div>
